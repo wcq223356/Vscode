@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #bigPic {
+            position: absolute;
+            left: 300px;
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+
+        }
+
+        #check {
+            position: absolute;
+            left: 400px;
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+
+        }
+
+        #slipPic {
+            position: absolute;
+            width: 77px;
+            height: 77px;
+            background-color: cornflowerblue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigPic">验证图</div>
+    <div id="check">验证区</div>
+    <div id="slipPic">拖动图</div>
+
+    <script>
+        let slipPic = document.getElementById('slipPic');
+        // let check = document.getElementById('check');
+
+        slipPic.onmousedown = function (event) {
+             divX = event.clientX - slipPic.offsetLeft;
+        }
+
+            slipPic.onmousemove = function (event) {
+                moveLeft = event.clientX - divX;
+                slipPic.style.left = moveLeft + 'px';
+                console.log(divX)
+
+                slipPic.onmouseup = function () {
+                    if (moveLeft >= 395 && moveLeft + slipPic.offsetWidth <= 485) {
+                        alert('验证成功');
+                    } else {
+                        alert('验证失败');
+                    }
+
+                    slipPic.onmousemove = null;
+                    slipPic.onmouseup = null;
+                    
+                }
+            }
+            
+            
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

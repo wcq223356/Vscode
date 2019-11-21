@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button id="code">获取验证码</button>
+
+
+    <!-- 全局变量的方法 -->
+    <!-- <script>
+        let codeBut = document.getElementById('code');
+        let time = 5;
+
+        function foo() {
+           
+           
+            time--;
+            codeBut.textContent = time + 's后重新获取';
+            t = setTimeout(foo, 1000);
+            
+            if (time < 1) {
+                codeBut.disabled = false;
+                codeBut.textContent = '获取验证码';
+                clearTimeout(t);
+                time = 5;
+            }
+      
+        }
+
+        codeBut.onclick = function () {
+            codeBut.disabled = true;
+            foo();
+
+        }
+
+    </script> -->
+
+
+    <!-- 局部变量的方法 -->
+    <script>
+            let codeBut = document.getElementById('code');
+            
+    
+            function foo(time = 5) {
+               
+                if (time <= 1) {
+                    codeBut.disabled = false;
+                    codeBut.textContent = '获取验证码';
+                    clearTimeout(t);
+                    time = 5;
+                    return;
+                }
+
+                time--;
+                codeBut.textContent = time + 's后重新获取';
+                t = setTimeout("foo("+time+")", 1000);
+                
+               
+          
+            }
+    
+            codeBut.onclick = function () {
+                codeBut.disabled = true;
+                foo(60);
+    
+            }
+    
+        </script>
+
+
+
+
+    <!-- <button id="btn" onclick="send()">点击发送验证码</button>
+
+    <script>
+        function send(times = 5) {
+
+            if (times <= 1) {
+                times = 5;
+                document.getElementById('btn').disabled = false;
+                document.getElementById('btn').textContent = '点击发送验证码';
+                return;
+            }
+
+            document.getElementById('btn').disabled = true;
+            times--;
+            document.getElementById('btn').textContent = times + '秒后重新发送';
+
+
+            setTimeout("send(" + times + ")", 1000);
+
+        }
+    </script> -->
+</body>
+
+</html>

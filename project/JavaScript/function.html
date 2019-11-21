@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function</title>
+</head>
+
+<body>
+    <script>
+        //无参函数：
+        // function 函数名 () {
+        //     函数体（执行代码）
+        // }
+
+        //有参函数：
+        // function 函数名 （形参1， 形参2， 形参3）｛
+        //        函数体
+        // ｝
+
+        // 函数名（实参1， 实参2， 实参3）
+
+        // 直接这样写函数是不会执行的
+        // function foo (a1, a2) {
+        //    console.log ('this is test'+' a1='+ a1 +' a2='+a2);
+        // }
+        // 需要调用函数后才会执行，其实也就是在function的花括号外写上 ‘foo（'', ''）’，同时不管是放在function的上面还是下面都行。
+
+        // foo('name1', 'name2');
+        // 在function后面foo里面的参数是形参，是可以改变的，下面foo里的实参可以
+        // 赋给上面的a1和a2
+
+        // ........................分割线.........................................
+
+        // 函数中的return是返回结果的操作，同时只要出现了return，之后的操作都不会
+        // 进行了，类似于break（但break是不会返回结果的）；我们可以通过调用函数查看结果,同时只需要改变所调用函数内部的实参
+        // 就可以直接改变形参中的内容，从而得到不同的结果。
+        // function calc (num1, num2, type) {
+        //     switch (type) {
+        //         case '+':
+        //             return num1 + num2;
+
+        //         // 测试return的效果
+        //         console.log('babababa')   
+
+        //         case '-':
+        //             return num1 - num2;
+        //         case '*':
+        //             return num1 * num2;
+        //         case '/':
+        //             return num1 / num2;
+        //     }
+        // }
+        // console.log(calc(2, 3, '/'))
+
+
+
+        // 以下是求m的n次幂：   
+
+
+        // function sdPower(m, n) {
+        //     let result = 1;
+        //     if (m == 0 || n == 0) {
+        //         return Error
+        //     }
+
+        //     // while (n > 0) {
+        //     //     result = result * m;
+        //     //     n--;
+        //     // }
+
+        //     for (let i = 0; i < n; i++) {
+        //         result *= m;
+
+        //     }
+        //     return result;
+        // }
+        // console.log(sdPower(2, 3))
+
+
+        //变量匿名函数：（变量名就是函数名）
+
+        let sum = function (num1, num2) {
+            return num1 + num2;
+        }
+        sum(3, 2)                     //此时的sum是一个函数了，这就是调用变量匿名函数的方法
+        console.log(sum(3, 2));
+
+        //无名称匿名函数：
+    //    结构： (定义函数)(调用函数)
+    // 例子：
+        let p1 = 1, p2 = 2;
+        (function (p1, p2) {
+
+        })(p1, p2);
+        // 这种结构的函数自身调用自身，不需要再额外取调用，如果函数里面是没有参数的，第二个括号就不要写参数
+
+    </script>
+</body>
+
+</html>

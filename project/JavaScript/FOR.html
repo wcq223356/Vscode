@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for</title>
+</head>
+<body>
+
+    <!-- <script>
+        // 1加到100
+        let num = 0;
+        for (i=0; i<=100; i++) {
+            // num = num + i  这两种写法是一样的
+                // num += i   
+                if (i % 2 == 0) {
+                    //continue;     //当循环中的if语句里看到continue表示满足条件跳过当前循环，执行下一循环；
+                   // break;          //当循环中的if语句里看到break表示满足条件后循环完全结束，后续都不执行；
+                }
+                document.write(i)
+        }
+        // console.log(num)
+    
+    </script> -->
+    <!-- <script>
+        // 用for循环取字母
+        let str = 'hello world'
+        for (let i=0; i<str.length; i++){
+            console.log(str[i])
+        }
+    </script> -->
+    
+    <!-- 取的字母是倒着的 dlrow olleh -->
+<!--    <script>-->
+<!--        let str = 'hello world'-->
+<!--        let str2 = ''-->
+<!--        for (i=str.length-1; i>=0; i&#45;&#45;){-->
+<!--            str2 = str2 + str[i];-->
+<!--            console.log(str2)-->
+<!--        }-->
+<!--    </script>-->
+   
+    <!-- 取的字母是正的 -->
+   <!-- <script>
+            let str = 'hello world'
+            let str2 = ''
+            for (i=str.length-1; i>=0; i--){
+                str2 = str[i] + str2;
+                console.log(str2)
+            }
+    </script> -->
+   
+   <!-- 没啥用的代码 -->
+
+   <!-- 下面两条是乘法口诀表 -->
+
+   <!-- 当两个for循环相套的时候，从第一个for循环开始，一直要等到
+        第二个for循环完全走了一遍之后，第一个for循环才会继续进行下一次，
+        然后第二个for循环又继续走完一轮，再到第一个循环，如此往复直到第一个for循环停止 -->
+<script>
+        for (let i=1; i<10; i++) {
+            for ( let a=0+i; a<10; a++) {
+                  document.write( i + '*' + a + '=' + a*i + ' ')
+            }
+            document.write('<br>')
+        }
+
+        // for (let i=1; i<=9; i++) {
+        //     for ( let a=1; a<=i; a++) {
+        //           document.write( a + '*' + i + '=' + a*i + '');
+        //     }
+        //     document.write('<br>');
+        // }
+
+
+</script>
+
+</body>
+</html>

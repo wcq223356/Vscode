@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #list {
+        width: 100%;
+        height: auto;
+        border: solid 1px #e3e3e3;
+        background-color: wheat;
+
+
+    }
+
+    #list ul{
+        border: solid 1px #e6e6e6;
+    }
+
+    #list li {
+        width: 200px;
+        list-style: none;
+        display: inline-block;
+      
+        /* float: left; */
+    }
+
+    .pic{
+        width: 100px;
+        height: auto;
+    }
+
+    .pic2 {
+        position: relative;
+        top: 3px;
+        width: 22px;
+        height: auto;
+
+    }
+
+    .inputs{
+        width: 20px;
+    }
+</style>
+
+<body>
+
+    <div id="list">
+
+    </div>
+
+    <div id="counter">
+        总计：￥<span id="counterPrice"></span>
+    </div>
+
+
+
+    <script>
+
+        let goodsList = [
+            { goodsName: '诸葛', goodsImgSrc: '../img/a.jpg', goodsPrice: 18888.11, nowCount: 1 },
+            { goodsName: '白起', goodsImgSrc: '../img/b.jpg', goodsPrice: 13888.03, nowCount: 1 },
+            { goodsName: '虞姬', goodsImgSrc: '../img/c.jpg', goodsPrice: 13888.04, nowCount: 1 },
+            { goodsName: '阿离', goodsImgSrc: '../img/d.jpg', goodsPrice: 13888.00, nowCount: 1 }
+        ];
+
+        let counter = 0;
+
+        goodsList.forEach(function (item, index) {
+            let oncePrice = item.goodsPrice * item.nowCount;
+            counter += oncePrice;
+            document.getElementById('list').innerHTML += "<ul>" +
+                "<li><img src='" + item.goodsImgSrc + "' class = 'pic' ></li>" +
+                "<li>" + item.goodsName + "</li> " +
+                " <li>价格：￥<span>" + item.goodsPrice.toFixed(2) + "</span></li>" +
+                "<li><button class='add'>-</button>" +
+                "<input type='text' value='" + item.nowCount + "' class='inputs'>" +
+                "<button class='sub'>+</button></li>" +
+                "<li >小计：￥<span class = 'oneCounter'>" + oncePrice.toFixed(2) + "</span></li>" +
+                "<li><a href='javascript:void(0);' class='del'><img src='../img/delete.jpg' alt='删除' class= 'pic2'></a></li>" +
+                "</ul>";
+        });
+
+        document.getElementById('counterPrice').textContent = counter;
+
+
+        //点击加号
+        document.querySelectorAll('.sub').forEach(function (item, index) {
+            item.onclick = function () {
+                let count = Number(document.querySelectorAll('.inputs')[index].value) + 1;
+                document.querySelectorAll('.inputs')[index].value = count;
+                totalOnce(index);
+            }
+        });
+
+        //点击减号
+        document.querySelectorAll('.add').forEach(function (item, index) {
+            item.onclick = function () {
+                let count = Number(document.querySelectorAll('.inputs')[index].value) - 1;
+                if (count <= 0) {
+                    return
+                }
+                document.querySelectorAll('.inputs')[index].value = count;
+                totalOnce(index);
+            }
+        }
+        );
+
+        //获取输入框的值
+        document.querySelectorAll('.inputs').forEach(function (item, index) {
+            item.onkeyup = function () {
+                totalOnce(index);
+            }
+        })
+
+        // 删除
+        document.querySelectorAll('.del').forEach(function (item, index) {
+            item.onclick = function (event) {
+                if (confirm('确认删除？')) {
+                    event.target.parentNode.parentNode.parentNode.remove();
+                    totalAll();
+                }
+            }
+        })
+
+        //统计商品小计
+        function totalOnce(index) {
+            let onePrice = goodsList[index].goodsPrice,
+                oneCount = document.querySelectorAll('.inputs')[index].value,
+                oneCounter = 0;
+
+            oneCounter = onePrice * oneCount;
+
+            document.querySelectorAll('.oneCounter')[index].textContent = oneCounter.toFixed(2);
+
+            totalAll();
+        }
+
+        //商品总计
+        function totalAll() {
+            let num = 0;
+            document.querySelectorAll('.oneCounter').forEach(function (item) {
+                console.log(item);
+                num += Number(item.textContent);
+
+            })
+
+            document.getElementById('counterPrice').textContent = num.toFixed(2);
+        }
+    </script>
+
+
+</body>
+
+</html>

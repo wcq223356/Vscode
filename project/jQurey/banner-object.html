@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图（面向对象）</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div#content{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: 130px;
+        }
+        div.btn{
+            position: absolute;
+            top: 120px;
+            width: 33px;
+            height: 77px;
+            z-index: 999;
+            cursor: pointer;
+            opacity: .6;
+        }
+        div.left{
+            left: 0;
+            background: url("../img/左右.png") no-repeat 0 -70px;
+            background-color: #000;
+        }
+        div.right{
+            right: 0;
+            background: url("../img/左右.png") no-repeat -33px -70px;
+            background-color: #000;
+        }
+        #content .box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: auto;
+            min-width: 1000px;
+            height: 300px;
+        }
+        #content>.box >.img1>img{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            float: left;
+        }
+    </style>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+
+        class myBanner {
+            constructor(onceWidth, length, $box) {
+                this.onceWidth = onceWidth;
+                this.length = length;
+                this.box = $box;
+                this.index = 0;
+
+                this.box.css('min-width', onceWidth*(length+1)+'px');//图片盒子的最小宽度
+                console.log(length+1);
+                let node = document.createElement($box.children().eq(0)[0].nodeName);
+                node.innerHTML = $box.children().eq(0).html();
+                $(node).html(node.innerHTML);
+
+                node.className = $box.children().eq(0)[0].className;
+                this.box.append(node);
+
+                console.log(node,$box.children().eq(0))
+            }
+            leftClick() {
+                if(this.index < 1) {
+                    this.index = this.length;
+                    this.box.css('left', '-'+this.onceWidth*this.length+'px'+'');
+                }
+                this.box.animate({
+                    left: '+='+this.onceWidth+'px'
+                },1000);
+                this.index--;
+            };
+            rightClick() {
+                if(this.index > (this.length-1)) {
+                    this.index = 0;
+                    this.box.css('left', '0px');
+                }
+                this.box.animate({
+                    left: '-='+this.onceWidth+'px'
+                });
+               this.index++;
+            };
+        };
+        $(function () {
+            let banner = new myBanner($("#content"). width(), $("div.box>.img1>img").length, $("div.box"))
+
+            $("div.right").click(function () {
+                banner.rightClick();
+            });
+            setInterval(function () {
+                banner.rightClick();
+            },3000);
+            $("div.left").click(function () {
+                banner.leftClick();
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="box">
+        <div class="img1"><img src="../img/221.webp"></div>
+        <div class="img1"><img src="../img/222.webp"></div>
+        <div class="img1"><img src="../img/225.webp"></div>
+        <div class="img1"><img src="../img/228.webp"></div>
+        <div class="img1"><img src="../img/229.webp"></div>
+    </div>
+    <div class="btn left"></div>
+    <div class="btn right"></div>
+   
+</div>
+</body>
+</html>

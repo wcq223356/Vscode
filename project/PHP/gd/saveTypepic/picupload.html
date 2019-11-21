@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(function () {
+
+            $('#btn').click(function () {
+                let formData = new FormData(document.getElementById('form'))
+                $.ajax({
+                    url: 'upload.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    catch: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+
+                $("input[name='file']").val('')
+            })
+
+
+
+
+
+        })
+
+
+
+
+    </script>
+</head>
+<body>
+    <form id="form">
+         添加图片：<input type="file" name="file">
+        <button type="button" id="btn">上传</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $.post('checksession.php', function (data) {
+
+                data = JSON.parse(data);
+                if(data.stateCode == 401) {
+                    window.location.href = 'login.html'
+                } else if (data.stateCode == 200) {
+                    $('h1').html('欢迎您，'+ data.stateData);
+                }
+
+            })
+
+
+
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #head {
+        width: 100%;
+        height: 50px;
+        background-color: steelblue;
+        overflow: hidden;
+    }
+
+    .head2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    /* div {
+        position: fixed;
+        width: 300px;
+        height: 100px;
+        border: solid 1px #ff0000;
+        display: none;
+    }
+
+    #up{
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        
+    }
+    */
+
+    #menu{
+        position:fixed;
+        right: 0;
+        top: 200px;
+        width: 50px;
+        height: auto;
+        border: solid 1px cyan;
+    }
+
+
+    p {
+        height: 500px;
+        border: solid 1px slategrey;
+    }
+
+
+</style>
+
+<body>
+    <!-- 使用代码调整div位置 -->
+    <!-- <button id="but">点击显示</button>
+    <div id="box"></div>
+
+    <script>
+        // console.log(window.screen.height);      屏幕可视高度
+        // console.log(window.screen.width);       屏幕可视宽度
+        // console.log(box.offsetHeight);          元素自身高度
+        // console.log(box.offsetWidth);           元素自身宽度
+   
+        
+        document.getElementById('but').onclick = function () {
+            document.getElementById('box').style.display = 'block';
+            
+            let x = parseInt(window.screen.height - box.offsetHeight) / 2
+            let y = parseInt(window.screen.width - box.offsetWidth) / 2
+            document.getElementById('box').style.top = x + 'px';
+            document.getElementById('box').style.left = y + 'px';
+            console.log(window.screen.height);
+            console.log(box.offsetHeight);
+            console.log(window.screen.height - box.offsetHeight);
+            console.log(x);
+        }
+    </script> -->
+
+
+    <!-- 使用js代码实现锚点楼层 -->
+    <!-- <div id="menu">
+     <a class="btn" style="cursor: pointer;">floor1</a>
+     <a class="btn" style="cursor: pointer;">floor2</a>
+     <a class="btn" style="cursor: pointer;">floor3</a>
+     <a class="btn" style="cursor: pointer;">floor4</a>
+     <a class="btn" style="cursor: pointer;">floor5</a>
+     <a class="btn" style="cursor: pointer;">floor6</a>
+     <a class="btn" style="cursor: pointer;">floor7</a>
+    </div>
+    <div id="">
+        <p class="floor"></p>
+        <p class="floor"></p>
+        <p class="floor"></p>
+        <p class="floor"></p>
+        <p class="floor"></p>
+        <p class="floor"></p>
+        <p class="floor"></p>
+    </div>
+
+    <script>
+
+        document.querySelectorAll('a.btn').forEach(function (item, index) {
+            console.log(document.querySelectorAll('a.btn'))
+            item.onclick = function () {
+                
+                window.scrollTo(0, document.querySelectorAll('p.floor')[index].offsetTop);
+                console.log('11111')
+            }
+        });
+
+
+    </script> -->
+
+    <!-- 滚轮滚动时导航栏变化效果 -->
+    <div id="head"></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        window.onscroll = function () {
+            console.log(111)
+            if (document.documentElement.scrollTop > 100) {
+                document.getElementById('head').className = 'head2'
+            } else {
+                document.getElementById('head').className = ''
+                console.log(222)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

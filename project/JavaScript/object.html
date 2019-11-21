@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object</title>
+</head>
+<body>
+    <script>
+        // 构造对象的方法：
+
+        //方法1：构造法
+        // function foo() {
+
+        //     this.name = 'world'
+        //     this.fun = function() {
+        //         console.log(this.name)
+        //     }
+        // } 
+
+        //     let Foo = new foo();   //实例化
+        //     // Foo.name = 'hello' //属性的操作,在这里给name赋值会改变上面world的值
+        //     Foo.fun();        //调用方法
+        //     console.log(typeof Foo)   //判断Foo的类型
+        //     console.log(Foo.name);    //获取name属性的值
+        
+
+        //方法2：直接new Object（）
+    
+        let obj = new Object();
+        // console.log(typeof obj);
+        
+        // //定义属性：
+        // obj.name = 'hello';
+        
+        // // 定义方法1：
+        // obj.foo = function() {
+        //     // return this.name;    //这里的this获取的是当前的对象，对象就是obj,而不是Windows顶级对象
+        //     // return obj.name;     //获取的内容和上面是一样的
+        //     return this;
+        // }
+
+        // // 定义方法2：其实就是先多了一步等于这个方法
+        // function test() {
+        //     return 'tejkgt';
+
+        // }
+        // obj.foo = test;     //调用方法  这里的test后面不能加（），不然会变成return的结果，不是调用方法
+        
+        // console.log(obj.foo);
+
+
+        //方法3：直接构造对象，不需要再new了
+        // let obj = {
+        //     name: 'hello',
+        //     age: 22,
+        //     sex: 1,
+           
+        //     //三种不同的方法形式：
+        //     eat:function() {
+        //         return 'eat' + this;   //当前对象
+        //     },
+            
+        //     play() {
+        //         return 'play' + this;   //当前对象
+        //     },
+
+        //     doing: () => {
+        //         return 'doing' + this;  //this window对象（顶级对象）
+        //     }
+        // };
+
+        // console.log(obj.name)      //获取属性
+        // console.log(obj.eat())     //调用方法
+        // console.log(obj.play())
+        // console.log(obj.doing())
+
+
+        //遍历对象
+        // let obj = {name:'bobo', age:18, fun:function() {
+        //     return 'fun'
+        // }};
+        // for(let x in obj) {
+        //     console.log(x);   //取属性名
+        //     // console.log(obj[x]);   //取属性值
+        //     console.log(x + ' => ' + obj[x]);    // 打印成 name => bobo 这样的形式
+        // }
+
+        // // 判断成员（sex属性）是否在对象obj中 返回的值是true（存在） 或 false（不存在 ）
+        // let foo = 'sex'
+        // console.log(foo in obj);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather</title>
+    <link rel="stylesheet" type="text/css" href="weather.css" />
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $('#content').hide();
+
+            $('#search').click(function () {
+                $('#content').html('');
+                $('#content').show();
+
+                let city = $('#city').val();
+                if(city == ''){
+                    return;
+                }
+
+                $.getJSON('https://www.tianqiapi.com/api/?version=v1&city='+city+'&appid=51622171&appsecret=vUqrU7ka',
+                    function (data) {
+                       let info = data.data;
+                       for (let i =0; i < info.length; i++) {
+                           $('#content').append(`<ul class="box">
+                                <li>${info[i].week}</li>
+                                <li>${info[i].date}</li>
+                                <li><img src="./img/${info[i].wea}.png"></li>
+                                <li>${info[i].tem2}~${info[i].tem1}</li>
+                                <li>${info[i].wea}</li>
+                                <li style="display: none">${info[i].air_level}</li>
+                           </ul>`)
+
+                       }}
+            )})
+
+            $('#content').on("mouseover mouseout", '.box', function(event){
+                if(event.type == "mouseover"){
+                    $(this).css("background-color","yellow");
+                }else if(event.type == "mouseout"){
+                    $(this).css("background-color","#4d4dff");
+                }
+            })
+
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <p>输入城市：<input type="text" name="city" id="city"> <button id="search">查询</button></p>
+    <div id="content">
+
+    </div>
+
+</body>
+</html>

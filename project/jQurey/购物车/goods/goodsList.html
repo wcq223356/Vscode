@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../../node_modules/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../js/goodsList.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #mask {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(108, 0, 250);
+            text-align: center;
+            line-height: 100vh;
+            font-size: 50px;
+            display: none;
+
+        }
+
+        div.box {
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+            float: left;
+            padding: 10px 5px;
+            text-align: center;
+        }
+
+        div#loading{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background-color: cornsilk;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+        //     // 遮罩层
+        //     setTimeout(function () {
+        //         $('div#mask').hide();
+        //     }, 3000)
+
+            getGoodsInfo();
+
+            $('#list').on('click', '#btn', function () { //值得注意的是如果是动态添加的元素需要使用on来绑定事件才能执行
+                
+                addGoodsCar($(this).attr('data-gid'));
+            })
+
+
+
+            function getGoodsInfo() {   //写成一个函数，后续做无限加载时可以直接调用该函数
+                $.get('../js/goodsList.json')
+                    .then(
+                        (date) => {
+                            date.forEach(item => {
+                                $('#list').append(
+                                    "<div class='box' >" +
+                                    "<p style='display: none;'>编号：" + item.goodsId + "</p>" +
+                                    "<p>商品名：" + item.goodsName + "</p>" +
+                                    "<p><img src='" + item.goodsPic + "'></p>" +
+                                    "<p>价格：" + item.goodsPrice + "</p>" +
+                                    "<p><a id='btn' style='cursor: pointer;' data-gid='" + item.goodsId + "'>加入购物车</a></p>"
+                                    + "</div>"
+                                );
+                            });
+                        }
+                    )
+            }
+
+            $(window).on('scroll', load)
+
+            function load() {
+                let nowHeight = document.documentElement.clientHeight + document.documentElement.scrollTop;
+                let toButton = document.documentElement.scrollHeight - nowHeight;
+
+                if (toButton <= 10) {
+                    $(window).off('scroll');                  
+                 
+                    setTimeout(function () {
+
+                        getGoodsInfo();
+                        $(window).on('scroll', load);
+                    }, 500);
+
+                }
+              
+            }
+
+        })
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="mask">
+        <span>正在进入.............</span>
+    </div>
+
+    <div id="list">
+        <!-- <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div> -->
+    </div>
+
+</body>
+
+</html>

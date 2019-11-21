@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../../node_modules/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../js/goodsList.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .inputs {
+            width: 20px;
+        }
+
+        table{
+            width: 500px;
+        }
+
+    </style>
+</head>
+<script>
+    $(function () {
+
+
+        let cartArr = stringToArray($.cookie('car'));
+        if ($.cookie('car') == "" || $.cookie('car') == undefined) {
+            return []
+        }
+        cartArr.forEach(function (item) {
+
+            getGoodsPrice(item.gid, item.num);
+
+        });
+
+
+
+
+        $(document).on('click', "a.delBtn", function () { //注意后加载的内容（动态加载）需要用on来绑定事件
+            if (confirm('确定删除？')) {
+                let gid = $(this).attr('data-gid');
+                let arr = [];
+                let oldCookieArray = stringToArray($.cookie('car'));
+                oldCookieArray.forEach(function (item, index) {
+                    if (item.gid == gid) {
+                        oldCookieArray.splice(index, 1); //删除数组 .splice（索引号，删除数量）
+                    }
+                });
+                writeToCookie(oldCookieArray);
+                alert('删除成功！');
+                $(this).parents('tr').remove();
+                //  window.location.reload();            //或者可以刷新一下页面
+            }
+        });
+
+
+        function getGoodsPrice(gid, num) {
+            $.get('../js/goodsList.json')
+                .then(
+                    function (data) {
+                        for (let i = 0; i < data.length; i++) {
+                            if (data[i].goodsId == gid) {
+                                let onceTotalPrice = num * data[i].goodsPrice;
+                                // $("#list").append("<tr>" +
+                                //     "<td><input type='checkbox'></td>" +
+                                //     "<td>" + data[i].goodsId + "</td>" +
+                                //     "<td>" + data[i].goodsPrice + "</td>" +
+                                //     "<td>" + num + "</td>" +
+                                //     "<td>" + onceTotalPrice + "</td>" +
+                                //     "<td><a class='delBtn' data-gid='" + data[i].goodsId +
+                                //     "'>删</a></td>" +
+                                //     "</tr>");
+
+                                $('#list').append(`<tr>
+                                    <td><input type= 'checkbox'></td>
+                                    <td>${data[i].goodsId}</td>
+                                    <td>${data[i].goodsPrice}</td>
+                                    <td><button class='sub'>-</button></td>
+                                    <td><input type='text' value='${num}' class='inputs'></td>
+                                    <td><button class='add'>+</button></td>
+                                    <td class = 'oneCounter'>${onceTotalPrice}</td>
+                                    <td><a class= 'delBtn' data-gid='${data[i].goodsId}'>删</a></td>
+                                    </tr>`);
+
+                                break;
+                            }
+                        }
+
+                    }
+                );
+
+        }
+
+
+        //点击加号
+        $('#list').on('click', 'button.add', function () {
+            let count = Number($(this).parent().prev().children().val()) + 1;
+            $(this).parent().prev().children().val(count);
+            let nowNum = $(this).parent().prev().children().val()
+            let goodsPrice = Number($(this).parent().prev().prev().prev().text());
+            let TotalPrice = Number(goodsPrice * nowNum);
+            $(this).parent().next().text(TotalPrice);
+
+        })
+
+        //点击减号
+        $('#list').on('click', 'button.sub', function () {
+            let count = Number($(this).parent().next().children().val()) - 1;
+            if (count <= 0) {
+                return
+            }
+            $(this).parent().next().children().val(count);
+            let nowNum = $(this).parent().next().children().val()
+            let goodsPrice = Number($(this).parent().prev().text());         
+            let TotalPrice = Number(goodsPrice * nowNum);
+            $(this).parent().next().next().next().text(TotalPrice);
+
+        })
+
+        //获取输入框的值\
+        
+        $('#list').on('keyup', 'input.inputs', function () {
+            let nowNum = $(this).val();
+            let goodsPrice = Number($(this).parent().prev().prev().text());
+            let TotalPrice = Number(goodsPrice * nowNum);
+            if($(this).val() <= 1){
+                $(this).val('1');
+                TotalPrice = goodsPrice;
+            }
+            $(this).parent().next().next().text(TotalPrice);
+        })
+
+
+    });
+</script>
+</head>
+
+<body>
+
+    <table id="list">
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Id编号</th>
+            <th>单价</th>
+            <th id="box1">数量</th>
+            <th id="box2">小计</th>
+            <th id="box3">删除</th>
+        </tr>
+    </table>
+    <div id="counter">
+        总计：￥<span id="counterPrice"></span>
+    </div>
+
+</body>
+
+</html>
+
+<body>
+
+</body>
+
+</html>

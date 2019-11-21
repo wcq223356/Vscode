@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math</title>
+</head>
+
+<body>
+    <!-- <script>
+        let num = 10.55
+        //对数进行向下取整
+        console.log(Math.floor(num));
+        
+        //生产[0, 1)的随机数
+        console.log(Math.random());
+    
+        //生成1-10的随机数
+        console.log(Math.floor(Math.random()*10)+1);
+
+        //生成1-100的随机数
+        console.log(Math.floor(Math.random()*100)+1);
+
+        //生成n-m的随机数
+        console.long(Math.floor(Math.random()*(m-n+1))+n)
+        
+        
+        console.log(Math.round(Math.random()*5) +2);
+    
+    </script> -->
+
+
+
+    <!-- 用生成随机生成的验证码来进行验证 -->
+
+    <input type="text" id="code" readonly>
+
+    <button id="send">发送验证码</button>
+
+    <script>
+        function myRandom(n, m) {
+
+            return Math.floor(Math.random() * (m - n + 1) + n);
+
+        }
+
+        function myCode() {
+            num = ''
+            for (let i = 0; i < 6; i++) {
+                num += myRandom(0, 9);
+            }
+        }
+
+        let num = '';
+
+        document.getElementById('send').onclick = function () {
+            document.getElementById('code').readOnly = false;
+
+            myCode();
+
+            console.log(num)
+        }
+
+        //keyCode或者which是和阿斯克码有关，回车键的值是13；onkeyup是当按键弹起时的事件
+        document.getElementById('code').onkeyup = function (event) {
+
+            if (event.keyCode == 13) {
+
+                if (this.value == num) {
+                    console.log('pass')
+                } else {
+                    this.select();
+
+                    alert('验证码错误');
+                    
+                    myCode()
+                   console.log(num)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

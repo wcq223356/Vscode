@@ -1,0 +1,87 @@
+[
+    {
+        "goodsId": "10001",
+        "goodsName": "华为P30",
+        "goodsPic": "../../img/华为P30.jpg",
+        "goodsPrice": "5888"
+        
+    },
+    {
+        "goodsId": "10002",
+        "goodsName": "小米8",
+        "goodsPic": "../../img/小米8.jpg",
+        "goodsPrice": "1888"
+        
+    },
+    {
+        "goodsId": "10003",
+        "goodsName": "OPPO RENO",
+        "goodsPic": "../../img/OPPOreno.jpg",
+        "goodsPrice": "4888"
+        
+    },
+    {
+        "goodsId": "10004",
+        "goodsName": "iPhone11",
+        "goodsPic": "../../img/iPhone11.png",
+        "goodsPrice": "8888"
+        
+    },
+    {
+        "goodsId": "10001",
+        "goodsName": "华为P30",
+        "goodsPic": "../../img/华为P30.jpg",
+        "goodsPrice": "5888"
+        
+    },
+    {
+        "goodsId": "10002",
+        "goodsName": "小米8",
+        "goodsPic": "../../img/小米8.jpg",
+        "goodsPrice": "1888"
+        
+    },
+    {
+        "goodsId": "10003",
+        "goodsName": "OPPO RENO",
+        "goodsPic": "../../img/OPPOreno.jpg",
+        "goodsPrice": "4888"
+        
+    },
+    {
+        "goodsId": "10004",
+        "goodsName": "iPhone11",
+        "goodsPic": "../../img/iPhone11.png",
+        "goodsPrice": "8888"
+        
+    },
+    {
+        "goodsId": "10001",
+        "goodsName": "华为P30",
+        "goodsPic": "../../img/华为P30.jpg",
+        "goodsPrice": "5888"
+        
+    },
+    {
+        "goodsId": "10002",
+        "goodsName": "小米8",
+        "goodsPic": "../../img/小米8.jpg",
+        "goodsPrice": "1888"
+        
+    },
+    {
+        "goodsId": "10003",
+        "goodsName": "OPPO RENO",
+        "goodsPic": "../../img/OPPOreno.jpg",
+        "goodsPrice": "4888"
+        
+    },
+    {
+        "goodsId": "10004",
+        "goodsName": "iPhone11",
+        "goodsPic": "../../img/iPhone11.png",
+        "goodsPrice": "8888"
+        
+    }
+   
+]

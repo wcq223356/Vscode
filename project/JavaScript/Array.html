@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+
+<body>
+    <!-- <script>
+        // 两种方式定义索引数组
+        let dom = new Array('hello', 'grable', 'world');
+        // let dom =['hello', 'grable', 'world']
+        
+        console.log(dom);
+        
+        // 数组的长度
+        console.log(dom.length);
+
+        // 取具体某个数组的值
+        console.log(dom[2]);
+
+        //关联数组 没有长度，是一个特殊的对象，只能用for in遍历
+        let dom = new Array();
+        dom['属性名'] = '属性值'
+        dom['属性名1'] = '属性值1'
+        dom['属性名2'] = '属性值2'
+        
+
+
+        // 三种遍历数组的方式 
+        // 方法1：可以遍历字符串、数组、对象（但是数组只能是索引数组，关联数组无法遍历）
+        for (let i = 0; i < dom.length; i++) {
+            console.log(dom[i]);
+        }
+        // 方法2：可以用forEach,但是这种方式只能遍历索引数组，不能遍历除数组之外的对象
+        dom.forEach(function (item, index) {
+
+        });
+        //方法3：可以遍历对象，同时可以遍历关联数组
+        for (let x in dom) {
+
+        }
+    </script> -->
+
+
+    <!--  冒泡排序：从小到大排 -->
+    <!-- <script>
+        let dom = Array(1, 11, 21, 15, 6, 8, 30, 45);
+        for(let i = 0; i<dom.length; i++) {
+            for(let j =i+1; j<dom.length; j++) {
+                if(dom[i]>dom[j]) {
+                    let bom = dom[i];
+                    dom[i] = dom[j];
+                    dom[j] = bom;
+                }
+            }
+        }
+        console.log(dom)
+    </script> -->
+
+
+
+    <!-- <script>
+        let dom = Array(11, 6, 88, 23, 18, 63, 9, 44);
+        for (let i = dom.length - 1; i >= 0; i--) {
+            //   console.log(dom[i])    j一定要注意始终跟随i的脚步，少一位
+            for (let j = i - 1; j >= 0; j--) {
+                if (dom[i] > dom[j]) {
+                    let bom = dom[i];
+                    dom[i] = dom[j];
+                    dom[j] = bom;
+                }
+            }
+        }
+        console.log(dom)
+    </script> -->
+
+</body>
+
+</html>

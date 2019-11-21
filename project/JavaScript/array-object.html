@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="list">
+
+</div>
+
+<div id="counter">
+    总计：<span id="counterPrice"></span>
+</div>
+
+
+
+<script>
+
+    let goodsList = [
+        {goodsName: '名称A', goodsImgSrc: 'img/a.jpg', goodsPrice: 1988.00, nowCount:1},
+        {goodsName: '名称B', goodsImgSrc: 'img/b.jpg', goodsPrice: 2988.00, nowCount:2},
+        {goodsName: '名称C', goodsImgSrc: 'img/c.jpg', goodsPrice: 3988.00, nowCount:1}
+    ];
+
+    // for (let i=0; i<goodsList.length; i++) {
+    //     goodsList[i].goodsName
+    // }
+
+    let counter = 0;
+
+    goodsList.forEach(function (item, index) {
+
+        let oncePrice = item.goodsPrice * item.nowCount;
+        counter += oncePrice;
+        document.getElementById('list').innerHTML  +=  "<ul data-item='"+index+"'>" +
+            "<li><img src='"+item.goodsImgSrc+"'></li>" +
+            "<li>"+item.goodsName+"</li>" +
+            "<li>"+item.goodsPrice+"</li>" +
+            "<li><button class='test1'>-</button>" +
+            "<input type='text' value='"+item.nowCount+"' class='inputs'>" +
+            "<button class='test2'>+</button></li>" +
+            "<li class='oneCounter'>"+oncePrice+"</li>" +
+            "<li><a href='javascript:void(0);' class='del'>删除</a></li>" +
+            "</ul>";
+    });
+
+    document.getElementById('counterPrice').textContent = counter;
+
+    // console.log(document.querySelectorAll('.test2'));
+    document.querySelectorAll('.test2').forEach(function (item, index) {
+        item.onclick = function () {
+            this.previousSibling.value = Number(this.previousSibling.value) + 1;
+            totalOnce(index);
+        }
+    });
+
+
+    document.querySelectorAll('.test1').forEach(function (item, index) {
+        item.onclick = function (e) {
+            // e.target.previousSibling
+            if (Number(this.nextSibling.value) <= 1) {
+                return;
+            }
+
+
+            this.nextSibling.value = Number(this.nextSibling.value) - 1;
+            totalOnce(this.nextSibling.value, this.parentNode.previousSibling.textContent);
+        }
+    });
+
+    document.querySelectorAll('.inputs').forEach(function (item, index) {
+        item.onkeyup = function (event) {
+            console.log(event.which);
+            console.log(this.value);
+            // totalOnce(index);
+        }
+    });
+
+
+    document.querySelectorAll('.del').forEach(function (item, index) {
+       item.onclick = function (e) {
+           if (confirm('确认删除？')) {
+               e.target.parentNode.parentNode.remove();
+               totalAll();
+           }
+       }
+    });
+
+
+    /**
+     * 统计商品小计
+     * @param index
+     */
+    function totalOnce(that) {
+
+        // let onePrice = goodsList[index].goodsPrice,
+        //     oneCount = document.querySelectorAll('.inputs')[index].value,
+        //     oneCounter = 0;
+
+        oneCounter = that;
+        document.querySelectorAll('.oneCounter')[index].textContent = oneCounter;
+        totalAll();
+    }
+
+    /**
+     * 统计商品总计
+     */
+    function totalAll() {
+
+        let sum = 0;
+        document.querySelectorAll('.oneCounter').forEach(function (item) {
+            sum += Number(item.textContent);
+        });
+        document.getElementById('counterPrice').textContent = sum;
+    }
+
+
+    // function test1() {
+    //     console.log('test1');
+    // }
+    //
+    // function test2() {
+    //     console.log('test2');
+    // }
+
+
+    // let array = [10, 20, 30];
+    // console.log(array);
+    // delete array[0];
+    // console.log(array);
+
+    // let obj = {name:'admin', age:18};
+    // delete obj.name;
+    // console.log(obj);
+
+    // dom.remove();
+
+</script>
+
+
+</body>
+</html>

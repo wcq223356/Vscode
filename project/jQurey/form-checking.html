@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            $('input').blur(function () {
+                $('span').html('')
+
+                //验证用户名是否为空
+                if ($('input[name= "uerName"]').val() === '') {
+                    $('input[name= "uerName"]').next().html('用户名不能为空');
+                    // $('input[name= "uerName"]').focus();
+                    return false;
+                }
+
+                //验证密码是否为空
+                if ($('input[name= "uerPass"]').val() === '') {
+                    $('input[name= "uerPass"]').next().html('密码不能为空');
+                    // $('input[name= "uerPass"]').focus();
+                    return false;
+                }
+
+                if ($('input[name= "usrPass2"]').val() === '') {
+                    $('input[name= "usrPass2"]').next().html('密码不能为空');
+                    // $('input[name= "usrPass2"]').focus();
+                    return false;
+                }
+                
+                //确认两次密码是否一致
+                if ($('input[name= "usrPass2"]').val() !== $('input[name= "uerPass"]').val()) {
+                    $('input[name= "usrPass2"]').next().html('两次输入的密码不一致，请重新输入');
+                    // $('input[name= "usrPass2"]').focus();
+                    return false;
+                }
+
+                //验证手机号是否为空，格式是否正确
+                if ($('input[name= "usrPhone"]').val() === '') {
+                    $('input[name= "usrPhone"]').next().html('手机号不能为空');
+                    // $('input[name= "usrPhone"]').focus();
+                    return false;
+                }
+
+                let phone = /^1[3-9]\d{9}$/;     //正则手机格式
+                if (!phone.test($('input[name= "usrPhone"]').val())) {
+                    $('input[name= "usrPhone"]').next().html('手机号格式不正确');
+                    // $('input[name= "usrPhone"]').focus();
+                    return false;
+                }
+
+                //验证邮箱是否为空，格式是否正确
+                if ($('input[name= "useMail"]').val() === '') {
+                    $('input[name= "useMail"]').next().html('邮箱不能为空');
+                    $('input[name= "useMail"]').focus();
+                    return false;
+                }
+
+                let mail= /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  //正则邮箱格式
+                if (!mail.test($('input[name= "useMail"]').val())) {
+                    $('input[name= "useMail"]').next().html('邮箱格式不正确');
+                    $('input[name= "useMail"]').focus();
+                    return false;
+                }
+
+            })
+        })
+    </script>
+
+
+
+    <form action="">
+        <p>
+            用户名：<input type="text" name="uerName">
+            <span></span>
+        </p>
+        <p>
+            密码：<input type="password" name="uerPass" id="">
+            <span></span>
+        </p>
+        <p>
+            确认密码：<input type="password" name="usrPass2" id="">
+            <span></span>
+        </p>
+        <p>
+            手机号：<input type="tel" name="usrPhone" id="">
+            <span></span>
+        </p>
+
+        <p>
+            邮箱：<input type="email" name="useMail" id="">
+            <span></span>
+        </p>
+
+        <button id="btn">注册</button>
+
+    </form>
+</body>
+
+</html>

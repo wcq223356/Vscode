@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'post.php', true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");  //以formData方式传数据,不然XMLHttpRequest无法直接传递数据
+        xhr.setRequestHeader("User-Token", localStorage.getItem('token'));
+        xhr.send('uname=admin&upass=123456');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                localStorage.setItem('token', xhr.getResponseHeader('user-token'));
+                // console.log(xhr.getAllResponseHeaders())  //获取所有的响应头信息，字符串，连接符是\r\n
+                // console.log(xhr.getResponseHeader('user-token'));  //获取某个响应头信息
+                // let responseToken = xhr.getResponseHeader('user-token');
+                // console.log(responseToken)
+                // if (responseToken != null) {
+                //
+                // }
+
+            }
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

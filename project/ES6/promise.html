@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //使用promise实现懒加载
+        function loading(url) {
+
+            return new Promise(function (resolve, reject) {
+                const image = new Image();
+
+                image.src = url;
+
+                image.onload = function () {
+                    setTimeout(function () {
+                        resolve(image)
+                    }, 3000)
+                }
+
+                image.onerror = function () {
+                    reject(new Error('image load fail'))
+                }
+            })
+
+        }
+
+        window.onload = function () {
+            document.querySelectorAll('img').forEach(function (item) {
+                loading(item.getAttribute('data-src'))
+                    .then(
+                        res => {
+                            console.log(res)
+                            item.parentNode.replaceChild(res, item)
+                        },
+                        err => {
+                            console.log(err)
+                            console.log(err)
+                        }
+                    );
+                console.log('回调了')
+            })
+        }
+
+
+        // 使用Promise对象实现的 Ajax 操作
+        const getJSON = function (url) {
+            const promise = new Promise(function (resolve, reject) {
+                const handler = function () {
+                        if (this.readyState !== 4) {
+                            return;
+                        }
+                        if (this.status === 200) {
+                            resolve(this.response);
+                        } else {
+                            reject(new Error(this.statusText));
+                        }
+                    }
+
+                const client = new XMLHttpRequest();
+                client.open("GET", url);
+                client.onreadystatechange = handler;
+                client.responseType = "json";
+                client.setRequestHeader("Accept", "application/json");
+                client.send();
+            });
+            return promise;
+        }
+
+        getJSON('../jQurey/购物车/js/goodsList.json')
+            .then(function (json) {
+                console.log('Contents' + json);
+            }, function (error) {
+                console.error('出错了', error);
+            });
+    </script>
+</head>
+
+<body>
+    <img src="../img/a1_night.png" alt="" data-src="../img/iPhone11.png">
+    <img src="../img/a1_night.png" alt="" data-src="../img/OPPOreno.jpg">
+    <img src="../img/a1_night.png" alt="" data-src="../img/华为P30.jpg">
+    <img src="../img/a1_night.png" alt="" data-src="../img/小米8.jpg">
+</body>
+
+</html>

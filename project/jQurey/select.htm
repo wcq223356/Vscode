@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td><input type="checkbox" name="checkAll" value="">全选</td>
+            <td>商品信息</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>￥小计<span></span></td>
+            <td>删除</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" value=""></td>
+            <td>商品A</td>
+            <td>￥<span class="onePrice">1223</span> </td>
+            <td>
+                <button>-</button>
+                <input type="text" value="1" class="view">
+                <button>+</button>
+            </td>
+            <td>￥小计<span></span></td>
+            <td>
+                <a class="del">X</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" value=""></td>
+            <td>商品D</td>
+            <td>￥<span class="onePrice">556.03</span> </td>
+            <td>
+                <button>-</button>
+                <input type="text" value="1" class="view">
+                <button>+</button>
+            </td>
+            <td>￥小计<span></span></td>
+            <td>
+                <a class="del">X</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" value=""></td>
+            <td>商品E</td>
+            <td>￥<span class="onePrice">1888.88</span> </td>
+            <td>
+                <button>-</button>
+                <input type="text" value="1" class="view">
+                <button>+</button>
+            </td>
+            <td>￥小计<span></span></td>
+            <td>
+                <a class="del">X</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" value=""></td>
+            <td>商品B</td>
+            <td>￥<span class="onePrice">1682.03</span> </td>
+            <td>
+                <button>-</button>
+                <input type="text" value="1" class="view">
+                <button>+</button>
+            </td>
+            <td>￥小计<span></span></td>
+            <td>
+                <a class="del">X</a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="check" value=""></td>
+            <td>商品C</td>
+            <td>￥<span class="onePrice">623</span> </td>
+            <td>
+                <button>-</button>
+                <input type="text" value="1" class="view">
+                <button>+</button>
+            </td>
+            <td>￥小计<span></span></td>
+            <td>
+                <a class="del">X</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="6" id="totalPrice" style="text-align: right;">总计￥<span></span></td>
+        </tr>
+
+    </table>
+    <script>
+        window.onload = function () {
+
+            $('tr:first').css('background-color', 'red');
+            // $('p:first').css('background-color', 'red');
+            // $('p:even').css('background-color', 'yellow')
+            // $('p:last').css('background-color', 'blue')
+            foo()
+
+            function foo() {
+
+
+                let Total = 0
+
+                $('tr').each(function () {
+
+                    let price = $(this).find('td span.onePrice').text();
+                    // $(this).find('td span.onePrice').text((price)).toFixed(2);
+                    
+                    let numTing = $(this).find('.view').val();
+
+                    if (price !== '') {
+                        let subTotal = parseFloat(price) * parseInt(numTing)
+                        $(this).find('td:eq(4) span').text((subTotal).toFixed(2));
+                        if ($(this).find('input[name = "check"]').prop('checked')) {
+                            Total += subTotal;
+                        }
+
+                    }
+                })
+
+                $('#totalPrice span').text((Total).toFixed(2));
+            }
+
+            $('button').click(function () {
+                let inputType = ($(this).text() === '+') ? $(this).prev() : $(this).next();
+                let num = ($(this).text() === '+') ? Number(inputType.val()) + 1 :
+                    //Number(inputType.val() -1);
+                    Number((inputType.val() > 1) ? inputType.val() - 1 : inputType.val());
+                inputType.val(num);
+
+                foo()
+            })
+
+            // $('input.view').keyup (function () {
+            //     $(this).val($(this).val().replace(/[^\d]/g, ''))  //如果输入的值是非数字，直接替换成空
+            //     if($(this).val() === '') {
+            //         $(this).val(1); 
+            //     }
+            //     foo();
+            // })
+
+            $('input.view').keyup(function (e) {
+                if (e.which < 48 || e.which > 57) {
+                    let newNum = ''
+                    newNum = (isNaN(parseInt($(this).val()))) ? 1 : parseInt($(this).val());
+                    $(this).val(newNum);
+                }
+                foo()
+            })
+
+
+            $('a.del').click(function () {
+                if (confirm('确认删除吗？')) {
+                    $(this).parent().parent().remove();
+                    foo();
+                }
+            })
+
+
+            $('input[name ="checkAll"]').change(function () {
+                $('input[name = "check"]').prop('checked', $(this).prop('checked'));
+                if ($(this).prop('checked')) {
+                    foo();
+                } else {
+                    $('#totalPrice span').text('0')
+                }
+            })
+            
+
+            $('input[name = "check"]').change(function () {
+                foo();
+                let x = true;
+                $('input[name = "check"]').each(function () {
+ 
+                    if ($(this).prop('checked') == false) {
+                    
+                        x = false;
+                    }
+                })
+
+                $('input[name ="checkAll"]').prop('checked', x);
+            })
+
+
+        }
+
+        // function toFixed(num) {
+        //     num += '';
+        //     let point = num.indexOf('.');
+        //     let intPart = num.substring(0, point);
+        //     let pointPart = num.substring(point + 1);
+        //     if (point < 0) {
+        //         return num + '.00';
+        //     }
+        //     if (pointPart.length == 1) {
+        //         return num + '0';
+        //     }
+        //     if (pointPart.length == 2) {
+        //         return num;
+
+        //     }
+        //     if (pointPart.length > 2) {
+        //         return intPart + '.' + pointPart.indexOf(0, 2);
+        //     }
+        // }
+    </script>
+
+
+
+</body>
+
+</html>

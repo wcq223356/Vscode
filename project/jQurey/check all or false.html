@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <label>
+        <input type="checkbox" name="checkAll">全选
+    </label>
+    <label>
+
+        <input type="checkbox" name="checkTurn">反选
+    </label>
+
+    <hr>
+    <label>
+        <input type="checkbox" name="op" value="a">A
+    </label>
+    <label>
+        <input type="checkbox" name="op" value="b">B
+    </label>
+    <label>
+        <input type="checkbox" name="op" value="c">C
+    </label>
+    <label>
+        <input type="checkbox" name="op" value="d">D
+    </label>
+    <label>
+        <input type="checkbox" name="op" value="e">E
+    </label>
+</body>
+
+    <script>
+        $(function () {
+            $('input[name="checkAll"]').click (function () {
+
+               $("input[name= 'op']").prop('checked', $(this).prop('checked'));
+            });
+
+            $('input[name="checkTurn"]').click (function () {
+              $("input[name= 'op']").each(function () { 
+                  $(this).prop('checked', !$(this).prop('checked'));
+               }) 
+            })
+            
+        })
+    
+    </script>
+
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(function () {
+
+            $('#btn').click(function () {
+
+               let code = $("input[name='code']").val();
+               if(code == '') {
+                   alert('验证码不能为空');
+                   return;
+               }
+
+                $.post('check.php', {
+                    code
+                }, function (data) {
+                    if(data.statusCode == 401) {
+                        alert('验证码有误，请重新输入');
+                    };
+                    if (data.statusCode == 200) {
+                        alert('登陆成功');
+                        window.location.href ='longon.php'
+                    }
+
+                },'json');
+
+            })
+
+
+
+
+        })
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <p>
+        验证码：<input type="text" name="code"><img src="../fontcode.php" alt="" onclick="this.src=this.src+'?'+Math.random()">
+    </p>
+    <p><button id="btn">登录</button></p>
+</body>
+</html>

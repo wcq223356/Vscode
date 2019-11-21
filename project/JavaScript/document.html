@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 取一组数中的最大值和最小值 -->
+    <!-- <script>
+
+        function foo() {
+
+            if (arguments.length == 0) {
+                return console.log(false);
+
+            } else if (arguments.length == 1) {
+                return console.log(arguments[0]);
+
+            } else if (arguments.length > 1) {
+                let min = arguments[0],
+                    max = arguments[0];
+
+                for (let i = 1; i < arguments.length; i++) {
+                    if (min > arguments[i]) {
+                        min = arguments[i];
+                    }
+                    if (max < arguments[i]) {
+                        max = arguments[i];
+                    }
+                }
+                return console.log(max, min)
+
+            }
+        }
+        foo()
+
+    </script> -->
+
+    <!--  -->
+
+    <!-- <script>
+        // let date = new Date('2019-10-10 21:59:55')  这种写法也可以
+        let date = new Date(2019, 10, 12);
+        console.log(date.getTime());
+    
+    </script> -->
+
+    <!--       
+        秒= 毫秒/1000
+        分= 秒/60
+        小时= 分/60
+        天 = 小时/24
+        去除小数点后面部分可以使用 floor 或者 parseInt()
+        但是还有剩整数的余数该怎么算
+        可以使用求余% ： 36小时 % 24小时 = 12小时
+     -->
+    <!-- 预计毕业时间 -->
+    <script>
+        setInterval(foo, 1000);
+
+        function foo() {
+            let willTime = new Date('2020-1-17');
+            let nowTime = new Date();
+            // console.log(willTime.getTime(), nowTime.getTime());
+            let time = willTime - nowTime;
+            // console.log(time);
+
+            let day = Math.floor(time / 1000 / 60 / 60 / 24);
+            let hour = Math.floor(time / 1000 / 60 / 60 % 24);
+            let minute = Math.floor(time / 1000 / 60 % 60);
+            let second = Math.floor(time / 1000 % 60);
+
+            second = (second < 10) ? '0' + second : second;//拼接0
+            minute = (minute < 10) ? '0' + minute : minute;
+            hour = (hour < 10) ? '0' + hour : hour;
+
+            let result = '倒计时：' + day + ' 天 ' + hour + ' 时 ' + minute + ' 分 ' + second + ' 秒 '
+
+            console.log(result);
+        }
+    </script>
+
+    <!-- 选择显示 -->
+    <!-- <input type="checkbox" id="a1" value="白起" class="name">白起
+    <input type="checkbox" id="a2" value="虞姬" class="name">虞姬
+    <input type="checkbox" id="a3" value="李信" class="name">李信
+    <input type="checkbox" id="a4" value="甄姬" class="name">甄姬
+    <input type="checkbox" id="a5" value="吕布" class="name">吕布
+    <button id="btn" onclick="foo()">显示</button>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById('result');
+        let option = document.querySelectorAll('.name');
+
+        function foo() {
+            result.innerHTML = '我擅长的英雄：'
+
+            for (let i = 0; i < option.length; i++) {
+                console.log(option[i])
+
+                if (option[i].checked == true) {
+
+                    result.innerHTML += option[i].value
+                }
+            }
+
+        }
+        
+        // 不输出到页面，直接分割成字符串，后续可以当表单元素进行提交
+        // function foo() {
+        //     let str = ''
+
+        //     option.forEach(function (item, index) {
+        //         if (item.checked) {
+        //             str += (str == '') ? item.value : ',' + item.value;
+        //             //上面也可以写成下面这样
+        //             // str = (str == '') ? item.value : str + ',' + item.value;     
+        //             console.log(item)
+        //             console.log(item.value)
+        //         }
+        //     })
+
+        // }
+    </script> -->
+
+
+
+
+    <!-- <script>
+
+    let arr2 = [
+        [
+            ['a', 'b', 'c'],
+            ['d', 'f', 'k']
+        ],
+        ['A', 'B', 'C'],
+        'HELLO'
+        [
+            [
+                ['LLLL'],
+                'WORLD'
+            ]
+        ]
+    ]
+
+    function foo(arr) {
+        if (arr instanceof Array) {
+            
+            arr.forEach(function (item, index) {
+                if (item instanceof Array) {
+                    foo(item);
+                } else {
+                   console.log(arr);
+                }
+            
+            }) 
+                           
+        }
+    }
+    foo(arr2) -->
+
+
+
+
+    </script>
+
+</body>
+
+</html>

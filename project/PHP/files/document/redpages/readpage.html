@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻页</title>
+    <script src="jquery.js"></script>
+    <script>
+        let page = 1;
+        let pagenum =0;
+
+        $(function () {
+
+            //获取第一页的数据
+            getFileContent(page);
+
+            $('a.change').click(function () {
+
+                $('a.change').show();
+                let attribute = $(this).attr('data-item');
+                if(attribute == 'first') {
+                    getFileContent(1);
+
+                } else if(attribute == 'last') {
+                    getFileContent(pagenum);
+
+                } else if(attribute == 'prev' && page >1) {
+                    page = page -1;
+                    getFileContent(page);
+
+                } else if(attribute == 'next' && page < pagenum) {
+                    page = page + 1;
+                    getFileContent(page)
+                }
+            })
+
+
+        })
+
+        function getFileContent(num) {
+
+            $.get('getFileContent.php?num='+num, function (data) {
+
+                console.log(data)
+                if(data.stateCode == 200) {
+
+                    $('#content').html(data.data.content);
+                    page = data.data.page;
+                    pagenum = data.data.pagenum;
+                    console.log(page);
+                    console.log(pagenum);
+                    $('#nowPage').html(page);
+                    $('#allPage').html(pagenum);
+
+
+                    if(page == 1) {
+                        $("a.change[data-item='first']").hide();
+                        $("a.change[data-item='prev']").hide();
+                    }
+                    if(page >= pagenum) {
+                        $("a.change[data-item='last']").hide();
+                        $("a.change[data-item='next']").hide();
+                    }
+
+                }
+            }, 'json')
+        }
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="content">
+
+    </div>
+
+    <p>
+        页数：<span id="nowPage"></span>/ <span id="allPage"></span>
+        <a class="change" data-item="first">首页</a>
+        <a class="change" data-item="prev">上一页</a>
+        <a class="change" data-item="next">下一页</a>
+        <a class="change" data-item="last">尾页</a>
+    </p>
+</body>
+</html>

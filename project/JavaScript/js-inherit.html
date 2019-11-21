@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js继承</title>
+</head>
+<body>
+
+    <!-- 方式1： -->
+    <!-- <script>
+        let father = {                           //一定要注意格式，花括号里面直接 属性： 值
+                                                 //中间用‘，’隔开，   
+            name: '魏',
+            money: '100 Million',
+            saySome: function () {
+                console.log(this.name,this.money)
+            }
+        } 
+        
+        function Children () {
+            this.name = '赵';                   //注意如果这里的对象有属性、方法会直接导致原型对象
+                                                //也被修改，因为prototype属性 这种方式叫‘重写’  
+        }
+        
+        Children.prototype = father;           //这一步就是继承
+        
+        let my = new Children();               //实例化函数
+        console.log(my.name)
+        my.saySome()                           //相当于调用函数
+    </script> -->
+
+    <!-- 方法2： -->
+    <script>
+        function Children2 (name, age) {        //注意函数里的是参数也就是值
+            this.name = name;                   //this后面的是属性，=后面是值
+            this.age = age
+        }
+    
+        let parent = {
+            sayThing: function () {
+                console.log(this.name + this.age)
+            },
+            playing: function () {
+                console.log(this.name + 'basketball')
+            } 
+        }
+        
+        for(let i in parent) {
+           Children2.prototype[i] = parent[i];      //遍历对象取方法
+        }
+        
+        let me = new Children2('魏', 23)
+        me.sayThing();
+        me.playing();
+    
+    </script>
+</body>
+</html>

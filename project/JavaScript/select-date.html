@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择年月日</title>
+</head>
+
+<body>
+    <script>
+        function foo(j) {
+
+            j = parseInt(j);
+            if (j % 4 == 0 && j % 100 !== 0 || j % 400 == 0) {
+                return true
+            }
+            return false
+        }
+
+
+        window.onload = function () {
+
+
+            let now = new Date();
+            let nowYear = now.getFullYear();
+
+            for (let y = 1960; y <= nowYear; y++) {
+                document.getElementById('year').add(new Option(y, y), null)
+            }
+
+            for (let x = 1; x <= 12; x++) {
+                document.getElementById('month').add(new Option(x, x), null)
+            }
+
+
+            let flagYear = false;
+
+            document.getElementById('year').onchange = function () {
+
+                document.getElementById('month').options[0].selected =
+                    true; //selected 是option的默认选择属性，在js中让其显示表示为true；
+                document.getElementById('day').options.length = 0;
+                document.getElementById('day').add(new Option('--选择日期--', ''), null);
+                // 上面代码的目的是当年份改变的时候，月份和日期重置
+
+                if (this.value != '' && foo(this.value)) {
+                    flagYear = true;
+                } else {
+                    flagYear = false;
+                }
+            };
+
+            document.getElementById('month').onchange = function () {
+
+                // console.log(document.getElementById('day'))
+                document.getElementById('day').options.length = 0; //注意这里的option是小写，同时因为是多个option，构成了数组所以要加S。
+                document.getElementById('day').add(new Option('--选择日期--', ''), null);
+                // 上面两步的目的是重置天数选择框，如果不重置会出现每选择一次月份，日期选择框的所有天数就出现一次，一直累加                                                                            
+
+
+
+                if (document.getElementById('year').value == '' || this.value == '') {
+                    return
+                }
+
+                // 方法一
+                // let maxDay = 0;
+                // if (
+                //     this.value == 1 ||
+                //     this.value == 3 ||
+                //     this.value == 5 ||
+                //     this.value == 7 ||
+                //     this.value == 8 ||
+                //     this.value == 10 ||
+                //     this.value == 12
+                // ) {
+                //     maxDay = 31;
+                // } else if (this.value != 2) {
+                //     maxDay = 30;
+                // } else if (this.value == 2 && flagYear) {
+                //     maxDay = 29;
+                // } else {
+                //     maxDay = 28;
+                // }
+
+                // for (let z = 1; z <= maxDay; z++) {
+                //     document.getElementById('day').add(new Option(z, z), null);
+                // }
+
+
+                // 方法二
+                Array.prototype.array = function (item) {
+
+                    for (let i = 0; i < this.length; i++) {
+
+
+                        if (item === this[i]) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                let maxDay = 0,
+                    arrMonth = new Array(1, 3, 5, 7, 8, 10, 12);
+                if (arrMonth.array(this.value)) {
+                    maxDay = 31;
+                } else if (this.value != 2) {
+                    maxDay = 30;
+                } else if (this.value == 2 && flagYear) {
+                    maxDay = 29;
+                } else {
+                    maxDay = 28;
+                }
+
+                for (let z = 1; z <= maxDay; z++) {
+                    document.getElementById('day').add(new Option(z, z), null);
+                }
+                    
+
+
+                // 方法三
+                //下面这一行代码的效果相当于上面的代码，调用的是js里的内置函数Date，
+                // let maxDay = new Date(document.getElementById('year').value, this.value, 0);
+
+                // // console.log(maxDay.getDate())
+                // // return;
+            //     for (let z = 1; z <= maxDay.getDate(); z++) {
+            //         document.getElementById('day').add(new Option(z, z), null);
+            //     }
+            }
+
+        }
+    </script>
+
+
+    <select name="year" id="year">
+        <option value="">--选择年份--</option>
+    </select>
+
+    <select name="month" id="month">
+        <option value="">--选择月份--</option>
+    </select>
+
+    <select name="day" id="day">
+        <option value="">--选择日期--</option>
+    </select>
+</body>
+
+</html>

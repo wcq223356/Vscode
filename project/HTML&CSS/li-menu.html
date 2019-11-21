@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式-二级菜单</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            position: relative;
+            left: 500px;
+            top: 100px;
+        }
+        div ul li{
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+        }
+        div ul li a.menu1{
+            width: 200px;
+            height: 30px;
+            display: block;
+            border: 1px solid #e2e2e2;
+        }
+        div ul li div.menu2{
+            position: absolute;
+            left: 200px;
+            top: 0;
+            z-index: 9;
+            width: 500px;
+            height: 300px;
+            border: 1px solid #ff0000;
+            display: none;
+        }
+        div ul li:hover div.menu2{
+            display: block;
+        }
+        div ul li:hover a.menu1{
+            border: 1px solid #ff0000;
+            background-color: #fff;
+            border-right: none;
+            position: absolute;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+<div id="menu">
+    <ul>
+        <li>
+            <a href="" class="menu1">主菜单1</a>
+            <div class="menu2">子1</div>
+        </li>
+        <li>
+            <a href="" class="menu1">主菜单2</a>
+            <div class="menu2">子2</div>
+        </li>
+        <li>
+            <a href="" class="menu1">主菜单3</a>
+            <div class="menu2">子3</div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

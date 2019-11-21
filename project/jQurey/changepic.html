@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 320px;
+            overflow: hidden;
+            border: solid 1px #223320;
+            margin: 100px;
+        }
+
+        #content a.btn {
+            position: absolute;
+            top: 0;
+            height: 320px;
+            width: 50px;
+            line-height: 320px;
+            z-index: 99;
+            color: #ff0000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a.next {
+            right: 0px;
+        }
+
+        a.prev {
+            left: 0px;
+        }
+
+        #box {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: auto;
+            min-width: 1000px;
+            height: 320px;
+            z-index: 10;
+        }
+
+        #box div.box1 {
+            width: 240px;
+            height: 320px;
+            overflow: hidden;
+            float: left;
+            line-height: 320px;
+            text-align: center;
+        }
+
+        img {
+
+            width: 240px;
+            height: 320px;
+        }
+
+        div#smallBtn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            text-align: center;
+            margin: 5px 70px;
+
+        }
+
+        div#smallBtn span.button {
+            width: 10px;
+            height: 10px;
+            background-color: #c9caca;
+            border-radius: 5px;
+            margin: 2px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(function () {
+
+            let oneWidth = $('#content').width(); //显示窗口的宽度
+            let picNumber = $('div.box1').length; //一共几张图片
+            let nowIndex = 0 //用来记录目前是第几张图片
+
+
+            $('div#box').append('<div class= "box1">' + $("div#box>div:first").html() +
+                '</div>') //把第一张图片添加到最后一张图片后，可以形成循环
+
+            $('div#box').css('min-width', oneWidth * picNumber + 'px'); //设置装图片的大盒子的最小宽度，如果不设置，图片会被往下压，就不能再通一排
+
+
+            //点击右边下一站按钮切换图片
+            $('a.next').click(function () {
+
+                if (nowIndex > picNumber - 1) { //减一是因为从第一张就已经开始了，有点类似索引值从0开始的感觉
+                    nowIndex = 0; //当图片到达最后一张之后让计数清空，同时把left值回到初始状态
+                    $('div#box').css('left', '0px')
+                }
+
+                $('div#box').stop(true, true).animate({
+                    left: '-=' + oneWidth + 'px'
+                }, function () {
+
+                })
+
+                nowIndex++
+            })
+
+            //点击左边上一张按钮切换图片
+            $('a.prev').click(function () {
+
+                if (nowIndex < 1) {
+                    nowIndex = picNumber;
+                    $('div#box').css('left', "-" + nowIndex * oneWidth + 'px')
+                }
+
+                $('div#box').stop(true, true).animate({
+                    left: '+=' + oneWidth + 'px'
+                })
+
+                nowIndex--
+            })
+
+            //自动轮播
+            function delay() {
+                if (nowIndex > picNumber - 1) {
+                    nowIndex = 0
+                    $('div#box').css('left', '0px')
+                }
+
+                $('div#box').stop(true, true).animate({
+                    left: '-=' + oneWidth + 'px'
+                })
+
+                $('span.button').each(function (index) {
+
+                    if (index == nowIndex) {
+                        $('span.button').css('background-color', '#c9caca')
+                        $(this).css('background-color', 'red')
+                    }
+                    
+                })
+
+                nowIndex++
+                t = setTimeout(delay, 1000)
+            }
+            delay()
+
+            //当鼠标放在图片上停止轮播，移出时继续
+            $('div#content').hover(function () {
+                clearTimeout(t)
+            }, function () {
+                delay()
+            })
+
+
+        })
+    </script>
+
+    <div id="content">
+        <a class="btn next">下一张</a>
+        <a class="btn prev">上一张</a>
+        <div id="box">
+            <div class="box1" id="pic1"><img src="../img/a.jpg" alt=""></div>
+            <div class="box1" id="pic2"><img src="../img/b.jpg" alt=""></div>
+            <div class="box1" id="pic3"><img src="../img/c.jpg" alt=""></div>
+            <div class="box1" id="pic4"><img src="../img/d.jpg" alt=""></div>
+            <div class="box1" id="pic5"><img src="../img/c.jpg" alt=""></div>
+            <div class="box1" id="pic6"><img src="../img/d.jpg" alt=""></div>
+        </div>
+        <div id="smallBtn">
+            <span class="button" data-item="pic1"></span>
+            <span class="button" data-item="pic2"></span>
+            <span class="button" data-item="pic3"></span>
+            <span class="button" data-item="pic4"></span>
+            <span class="button" data-item="pic5"></span>
+            <span class="button" data-item="pic6"></span>
+
+        </div>
+
+</body>
+
+</html>

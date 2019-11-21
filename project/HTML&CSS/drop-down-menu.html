@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #dropdown {
+            position: relative;
+            top: 50px;
+            left: 500px;
+            display: inline-block;
+            
+           
+        }
+
+        #dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #dddddd;
+            width: 100%;
+            height: auto;
+            /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+            /* 这个是设置阴影的 */
+            /* padding: 12px 16px;*/
+            /* 这个是设置框里面的内容离边框的距离  */
+            z-index: 1;
+            text-align: center;
+            /*当内容超出了设定的边框,可以设置overflow,可以选择滚动条的样式*/
+            /* overflow: auto; */
+        }
+
+        /* .dropdown:hover .dropdown-content {
+            display: block;
+        } */
+    </style>
+</head>
+
+<body>
+
+
+    <div id="dropdown" >
+        <span id="title">Mouse over me</span>
+        <div id="dropdown-content">
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+            <p>Hello World!</p>
+
+        </div>
+    </div>
+    <!----------------------------------用JS来实现下拉菜单------------------------------------->
+    <script>
+        document.getElementById('dropdown').onmouseover = function () {
+            document.getElementById('dropdown-content').style.display = 'block';
+            document.getElementById('title').style.color = 'red';
+        }
+        
+        document.getElementById('dropdown').onmouseout = function () {
+            document.getElementById('dropdown-content').style.display = 'none';
+            document.getElementById('title').style.color = '#000000';
+        }
+    
+    
+    </script>
+</body>
+
+</html>

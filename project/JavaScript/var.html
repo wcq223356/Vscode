@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!----------------------------- 计数器，点击一下记一次数 --------------------------------->
+    <button id="counter">计数器</button>
+    <h3 id="result"></h3>
+
+
+
+
+    <script>
+        var num = 0;
+        document.getElementById('result').textContent = num;
+
+        document.getElementById('counter').onclick = function () {
+
+            num++;
+
+            document.getElementById('result').textContent = num;
+
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+        // 全局变量在函数外部定义，可以同时在内部和外部使用；
+        // 局部变量在函数内部定义，只能在函数内部使用，无法在外部使用。
+
+        // var name1 = 'name1'
+        // function foo () {
+        //     var name2 = 'name2';
+        //     console.log(name1);
+        //     console.log(name2)
+        // }
+        //     console.log(name1);
+
+        // // 要console出内部函数的变量，需要调用函数才行    
+        // foo (); 
+
+        //可变函数 函数的函数名可以改变，函数名由变量所被赋予的值来决定
+        var funName = 'foo'
+
+        function foo() {
+            console.log('hhhjhjh');
+        }
+        // funName()     //这样写是无法进行调用的，此时浏览器会把这个当成是一个变量，并不是函数
+        eval(funName + '()') //可以通过‘eval’变成可以执行的表达式 foo(),相当于把两个字符串拼接起来了
+    </script>
+</body>
+
+</html>

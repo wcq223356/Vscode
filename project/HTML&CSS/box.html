@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>box</title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				border: 10px solid #FF0000;
+				padding: 20px; 
+				margin: 50px;
+				float: left;
+			}
+			
+			#box2{
+				border: 5px solid #00ff00;
+				width: 100px;
+				height: 100px;
+				padding: 20px; 
+				margin: 50px;
+				float: left;
+			}
+			
+			#box3{
+				border: 5px solid #0000FF;
+				width: 100px;
+				height: 100px;
+				padding: 20px; 
+				margin: 50px;
+			}
+			.clear{
+				clear: both;
+				height: 0;
+				font-size: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		width宽<br />
+		height高<br />
+		border边框<br />
+		padding内边距<br />
+		margin外边距<br />
+		float浮动 可以从左向右，也可以从右向左
+		
+		padding、margin参数值：<br />
+		1、一个值：padding： 10px 表示上下左右都是10px<br />
+		2、两个值：padding： 10px 20px 表示上和下都是10px，左和右都是20px<br />
+		3、三个值：padding： 10px 20px 30px 表示上是10px 左右是20px 下是30px
+		4、四个值：padding： 上、右、下、左 
+		<hr />
+		
+		<div id="box">
+			第一个盒子的信息
+		</div>
+		
+		<div id="box2">
+			第二个盒子的信息
+		</div>
+		<div class="clear"></div>
+		<!--上面这个div是为了清除前面两个div的浮动样式，如果不清除将影响下面的内容。值得
+			注意的是清除浮动需要用完了再清理，因此要注意清除放置的位置，以免清除了需要浮
+			动的样式
+		-->
+		<div id="box3" >
+			第三个盒子
+		</div>
+		
+	</body>
+</html>

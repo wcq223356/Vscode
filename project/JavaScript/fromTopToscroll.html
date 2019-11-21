@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #refreshContainer li {
+            background-color: #eee;
+            margin-bottom: 1px;
+            padding: 20px 10px;
+        }
+
+        .refreshText {
+            position: absolute;
+            width: 100%;
+            line-height: 50px;
+            text-align: center;
+            left: 0;
+            top: 0;
+            background-color: red;
+            transform: translateY(-50px);
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <main class="parent">
+
+        <p class="refreshText"></p>
+
+        <ul id="refreshContainer">
+
+            <!-- <li>111</li>
+
+        <li>222</li>
+
+        <li>333</li>
+
+        <li>444</li>
+
+        <li>555</li>
+
+        <li>111</li>
+
+        <li>222</li>
+
+        <li>333</li>
+
+        <li>444</li>
+
+        <li>555</li>
+
+        <li>111</li>
+
+        <li>222</li>
+
+        <li>333</li>
+
+        <li>444</li>
+
+        <li>555</li> -->
+
+        </ul>
+
+    </main>
+
+    <script type="text/javascript">
+        let list = [{
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            },
+            {
+                headPic: '../img/wenku_72.png',
+                name: '未知',
+                text: '今天也是美好的一天'
+            }
+        ];
+
+        list.forEach(function (item, index) {
+            document.getElementById('refreshContainer').innerHTML +=
+                "<li><img src='" + item.headPic + "' class = 'pic'></li>" +
+                "<li> " + item.name + " </li>" +
+                "<li> " + item.text + " </li>";
+        })
+
+
+
+
+
+
+
+        window.onload = function () {
+
+
+
+            let container = document.querySelector('#refreshContainer');
+
+            let refreshText = document.querySelector('.refreshText');
+
+            let parent = document.querySelector('.parent');
+
+
+
+
+
+            let startY = 0; //手指触摸开始时的Y坐标
+
+            let endY = 0; //手指结束触摸时的Y坐标
+
+
+
+
+
+            parent.addEventListener('touchstart', function (e) {
+
+                startY = e.touches[0].pageY;
+               
+
+            });
+
+           
+            parent.addEventListener('touchmove', function (e) {
+
+                if (isTop() && (e.touches[0].pageY - startY) > 0) {
+
+                    console.log('下拉了');
+
+                    refreshText.style.height = "50px";
+
+                    parent.style.transform = "translateY(50px)";
+
+                    parent.style.transition = "all ease 0.5s";
+
+                    refreshText.innerHTML = "释放立即刷新...";
+
+                }
+
+            });
+
+
+            parent.addEventListener('touchend', function (e) {
+
+                if (isTop()) {
+
+                    refreshText.innerHTML = "正在刷新...";
+
+                    setTimeout(function () {
+
+                        parent.style.transform = "translateY(0)";
+
+                        console.log('成功刷新');
+
+                    }, 2000)
+
+                }
+
+                return;
+
+            })
+
+            function isTop() {
+
+                var t = document.documentElement.scrollTop || document.body.scrollTop;
+
+                return t === 0 ? true : false;
+
+            }
+
+
+
+        }
+    </script>
+
+</body>
+
+
+
+</html>

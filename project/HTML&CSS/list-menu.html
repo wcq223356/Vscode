@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<li lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>list-menu</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        li{
+            list-style: none;
+        }
+
+        #menu{
+            width: 300px;
+            height: 120px;
+            position: relative;
+            /* border: solid 1px #ff00ff */
+        }
+
+        #menu ul li{
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        #menu ul li a.menu1{
+            width: 120px;
+            height: 35px;
+            line-height: 35px;
+            padding: 1px 3px;
+            display: block;
+        }
+
+        #menu ul li div.menu2{
+            position: absolute;
+            top: 0;
+            left: 126px;
+            background-color: #fff;
+            border: 1px solid #f00;
+            width: 300px;
+            height: 99px;
+            display: none;
+            z-index: 99;
+        } 
+        #menu ul li:hover div.menu2{
+            display: block;
+        }
+        #menu ul li:hover a.menu1{
+            border: 1px solid #f00;
+            border-right: none;
+            background-color: #fff;
+            position: absolute;
+            z-index: 999;
+        }  
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="#" class="menu1">菜单一</a>
+                <div class="menu2">子菜单1</div>
+            </li>
+            <li>
+                <a href="#" class="menu1">菜单二</a>
+                <div class="menu2">子菜单2</div>
+            </li>
+            <li>
+                <a href="#" class="menu1">菜单三</a>
+                <div class="menu2">子菜单3</div>
+            </li>
+        </ul>
+
+
+
+
+
+    </div>
+</body>
+</li>

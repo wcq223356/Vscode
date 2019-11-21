@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+</head>
+    <style>
+        p{
+            width: 300px;
+        }
+    
+    </style>
+<body>
+    <!-- ---------------------------JQ实现下拉菜单------------------------------- -->
+    <script>
+        $(function () {
+            $('div#menu2, div#menu3, div#menu4').hide();
+
+            $('a.list').hover(function () {
+                $('a.list').css('color', '#000');
+                $(this).css('color', 'red');
+                $('#content>div').hide();
+                $('#content>div#'+$(this).attr('data-item')).show();
+            })
+        })
+    </script>
+
+
+
+    <p>
+        <a id="list1" class="list" data-item="menu1">菜单一</a>
+        <a id="list2" class="list" data-item="menu2">菜单二</a>
+        <a id="list3" class="list" data-item="menu3">菜单四</a>
+        <a id="list4" class="list" data-item="menu4">菜单五</a>
+    </p>
+    <div id="content">
+        <div id="menu1" class="menu">菜单一内容</div>
+        <div id="menu2" class="menu">菜单二内容</div>
+        <div id="menu3" class="menu">菜单三内容</div>
+        <div id="menu4" class="menu">菜单四内容</div>
+    </div>
+
+
+
+    <!-- -------------------------------------------------------------------------- -->
+
+    <!-- <script>
+        $(function () {
+            $('div.content p.pic').hide();
+            $('div.content p.word').show();
+            $('div.content:first p.pic').show();
+            $('div.content:first p.word').hide();
+
+            $('div.content').hover(function () {
+                $('div.content p.pic').hide();
+                $('div.content p.word').show();
+                $(this).children('p.pic').show();
+                $(this).children('p.word').hide();
+            })
+
+
+        })
+    </script>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div>
+    <div class="content">
+        <p class="pic">图片</p>
+        <p class="word">文字</p>
+    </div> -->
+</body>
+
+</html>

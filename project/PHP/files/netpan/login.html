@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网盘登录界面</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $('#login').click(function () {
+
+                let username = $("input[name='username']").val();
+                let userpwd = $("input[name='userpwd']").val();
+                if (username == ''|| userpwd == '') {
+                    alert('用户名和密码不能为空');
+                }
+
+                $.post('checkLogin.php',{
+                    username,
+                    userpwd
+                },function (data) {
+
+                    if(data.statusCode == 200) {
+
+                        window.location.href = './netList.html'
+                    } else {
+                        // alert(data.statusMsg);
+                    }
+
+                }, 'json');
+
+
+            })
+        })
+
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    <p>用户名：<input type="text" name="username"></p>
+    <p>密码：<input type="password" name="userpwd"></p>
+    <button id="login">登录</button>
+</body>
+</html>

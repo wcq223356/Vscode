@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    a{
+        display: block;
+        background-color: aquamarine;
+        width: 300px;
+    }
+
+    p {
+        /* margin-left: 300px; */
+        width: 300px;
+        background-color: coral;
+    }
+</style>
+
+<body>
+
+    <script>
+        $(function () {
+            $('div.content p').hide();
+            $('a.title').show();
+
+            $('a.title').click(function () {
+                $('div.content p').slideUp();
+                $(this).nextAll().show();
+                $(this).prev().hide();
+
+            })
+        })
+    </script>
+    
+    <div class="content">
+        <a class="title" id="title1">第一段</a>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+    </div>
+
+    <div class="content">
+        <a class="title">第二段</a>
+        <p>3333333333</p>
+        <p>3333333333</p>
+        <p>3333333333</p>
+    </div>
+
+    <div class="content">
+        <a class="title" id="title3">第三段</a>
+        <p>4444444444</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+    </div>
+
+    <div class="content">
+        <a class="title" id="title4">第四段</a>
+        <p>2222222222</p>
+        <p>2222222222</p>
+        <p>2222222222</p>
+    </div>
+
+</body>
+
+</html>

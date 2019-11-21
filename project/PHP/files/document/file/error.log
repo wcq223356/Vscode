@@ -1,0 +1,248 @@
+[Mon Nov 04 21:52:46.141685 2019] [ssl:warn] [pid 3688:tid 236] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 21:52:46.273692 2019] [ssl:warn] [pid 3688:tid 236] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 21:52:48.805837 2019] [mpm_winnt:notice] [pid 3688:tid 236] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Mon Nov 04 21:52:48.806837 2019] [mpm_winnt:notice] [pid 3688:tid 236] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Mon Nov 04 21:52:48.806837 2019] [core:notice] [pid 3688:tid 236] AH00094: Command line: 'D:\\XAMPP\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Mon Nov 04 21:52:50.040908 2019] [mpm_winnt:notice] [pid 3688:tid 236] AH00418: Parent: Created child process 5752
+[Mon Nov 04 21:52:53.129084 2019] [ssl:warn] [pid 5752:tid 248] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 21:52:53.268092 2019] [ssl:warn] [pid 5752:tid 248] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 21:52:53.395099 2019] [mpm_winnt:notice] [pid 5752:tid 248] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 04 22:22:50.686899 2019] [ssl:warn] [pid 3524:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 22:22:50.826907 2019] [ssl:warn] [pid 3524:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 22:22:51.604951 2019] [mpm_winnt:notice] [pid 3524:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Mon Nov 04 22:22:51.604951 2019] [mpm_winnt:notice] [pid 3524:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Mon Nov 04 22:22:51.604951 2019] [core:notice] [pid 3524:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Mon Nov 04 22:22:51.643953 2019] [mpm_winnt:notice] [pid 3524:tid 368] AH00418: Parent: Created child process 1096
+[Mon Nov 04 22:22:54.020089 2019] [ssl:warn] [pid 1096:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 22:22:54.113095 2019] [ssl:warn] [pid 1096:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 04 22:22:54.229101 2019] [mpm_winnt:notice] [pid 1096:tid 260] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 05 00:32:21.519320 2019] [php7:notice] [pid 1096:tid 1584] [client ::1:52279] PHP Notice:  Undefined variable: x in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 00:32:21.520320 2019] [php7:notice] [pid 1096:tid 1584] [client ::1:52279] PHP Notice:  Undefined variable: y in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 00:32:24.688501 2019] [php7:notice] [pid 1096:tid 1584] [client ::1:52281] PHP Notice:  Undefined variable: x in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 00:32:24.689501 2019] [php7:notice] [pid 1096:tid 1584] [client ::1:52281] PHP Notice:  Undefined variable: y in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 00:33:46.059155 2019] [php7:error] [pid 1096:tid 1584] [client ::1:52284] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function foo(), 0 passed in E:\\Vscode\\project\\PHP\\test.php on line 40 and exactly 2 expected in E:\\Vscode\\project\\PHP\\test.php:37\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\test.php(40): foo()\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\test.php on line 37
+[Tue Nov 05 00:36:30.575565 2019] [php7:warn] [pid 1096:tid 1584] [client ::1:52304] PHP Warning:  Use of undefined constant x - assumed 'x' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 00:36:30.575565 2019] [php7:warn] [pid 1096:tid 1584] [client ::1:52304] PHP Warning:  Use of undefined constant y - assumed 'y' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\test.php on line 38
+[Tue Nov 05 20:54:32.487705 2019] [ssl:warn] [pid 2560:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 20:54:32.557709 2019] [core:warn] [pid 2560:tid 368] AH00098: pid file D:/XAMPP/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Nov 05 20:54:32.560710 2019] [ssl:warn] [pid 2560:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 20:54:34.641829 2019] [mpm_winnt:notice] [pid 2560:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Tue Nov 05 20:54:34.641829 2019] [mpm_winnt:notice] [pid 2560:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Tue Nov 05 20:54:34.641829 2019] [core:notice] [pid 2560:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Tue Nov 05 20:54:34.651829 2019] [mpm_winnt:notice] [pid 2560:tid 368] AH00418: Parent: Created child process 3020
+[Tue Nov 05 20:54:36.329925 2019] [ssl:warn] [pid 3020:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 20:54:36.390929 2019] [ssl:warn] [pid 3020:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 20:54:36.576939 2019] [mpm_winnt:notice] [pid 3020:tid 260] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 05 21:21:28.016671 2019] [mpm_winnt:notice] [pid 2560:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Nov 05 21:21:30.018785 2019] [mpm_winnt:notice] [pid 3020:tid 260] AH00364: Child: All worker threads have exited.
+[Tue Nov 05 21:21:30.225797 2019] [mpm_winnt:notice] [pid 2560:tid 368] AH00430: Parent: Child process 3020 exited successfully.
+[Tue Nov 05 21:21:35.146078 2019] [ssl:warn] [pid 6544:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:21:35.251084 2019] [ssl:warn] [pid 6544:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:21:35.375092 2019] [mpm_winnt:notice] [pid 6544:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Tue Nov 05 21:21:35.376092 2019] [mpm_winnt:notice] [pid 6544:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Tue Nov 05 21:21:35.376092 2019] [core:notice] [pid 6544:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Tue Nov 05 21:21:35.394093 2019] [mpm_winnt:notice] [pid 6544:tid 368] AH00418: Parent: Created child process 4204
+[Tue Nov 05 21:21:37.720226 2019] [ssl:warn] [pid 4204:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:21:37.833232 2019] [ssl:warn] [pid 4204:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:21:37.917237 2019] [mpm_winnt:notice] [pid 4204:tid 260] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 05 21:42:47.361845 2019] [mpm_winnt:notice] [pid 6544:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Nov 05 21:42:49.362959 2019] [mpm_winnt:notice] [pid 4204:tid 260] AH00364: Child: All worker threads have exited.
+[Tue Nov 05 21:42:49.463965 2019] [mpm_winnt:notice] [pid 6544:tid 368] AH00430: Parent: Child process 4204 exited successfully.
+[Tue Nov 05 21:42:54.118231 2019] [ssl:warn] [pid 7368:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:42:54.214237 2019] [ssl:warn] [pid 7368:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:42:54.323243 2019] [mpm_winnt:notice] [pid 7368:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Tue Nov 05 21:42:54.323243 2019] [mpm_winnt:notice] [pid 7368:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Tue Nov 05 21:42:54.323243 2019] [core:notice] [pid 7368:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Tue Nov 05 21:42:54.336244 2019] [mpm_winnt:notice] [pid 7368:tid 368] AH00418: Parent: Created child process 5092
+[Tue Nov 05 21:42:57.005397 2019] [ssl:warn] [pid 5092:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:42:57.075401 2019] [ssl:warn] [pid 5092:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 05 21:42:57.203408 2019] [mpm_winnt:notice] [pid 5092:tid 260] AH00354: Child: Starting 150 worker threads.
+[Wed Nov 06 00:21:33.216693 2019] [mpm_winnt:notice] [pid 7368:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed Nov 06 00:21:35.219807 2019] [mpm_winnt:notice] [pid 5092:tid 260] AH00364: Child: All worker threads have exited.
+[Wed Nov 06 00:21:35.493823 2019] [mpm_winnt:notice] [pid 7368:tid 368] AH00430: Parent: Child process 5092 exited successfully.
+[Wed Nov 06 21:14:06.987698 2019] [ssl:warn] [pid 1588:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 06 21:14:07.705299 2019] [ssl:warn] [pid 1588:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 06 21:14:19.425320 2019] [mpm_winnt:notice] [pid 1588:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Wed Nov 06 21:14:19.425320 2019] [mpm_winnt:notice] [pid 1588:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Wed Nov 06 21:14:19.425320 2019] [core:notice] [pid 1588:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Wed Nov 06 21:14:19.905320 2019] [mpm_winnt:notice] [pid 1588:tid 368] AH00418: Parent: Created child process 3200
+[Wed Nov 06 21:14:21.585323 2019] [ssl:warn] [pid 3200:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 06 21:14:21.625323 2019] [ssl:warn] [pid 3200:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 06 21:14:21.685323 2019] [mpm_winnt:notice] [pid 3200:tid 260] AH00354: Child: Starting 150 worker threads.
+[Wed Nov 06 21:36:24.074053 2019] [php7:error] [pid 3200:tid 1532] [client ::1:50098] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function foo(), 0 passed in E:\\Vscode\\project\\PHP\\document.php on line 26 and exactly 1 expected in E:\\Vscode\\project\\PHP\\document.php:16\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(26): foo()\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 16, referer: http://localhost/project/PHP/
+[Wed Nov 06 22:52:25.149932 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:52115] PHP Warning:  Use of undefined constant arr2 - assumed 'arr2' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\document.php on line 27
+[Wed Nov 06 22:52:25.192934 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:52115] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Wed Nov 06 22:54:22.269631 2019] [php7:error] [pid 3200:tid 1516] [client ::1:52132] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function foo(), 0 passed in E:\\Vscode\\project\\PHP\\document.php on line 20 and exactly 1 expected in E:\\Vscode\\project\\PHP\\document.php:16\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(20): foo()\n#1 E:\\Vscode\\project\\PHP\\document.php(27): foo(Array)\n#2 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 16
+[Wed Nov 06 23:43:48.780305 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.793306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.794306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.794306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.794306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.794306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.795306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.795306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.795306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:43:48.795306 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:54120] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Wed Nov 06 23:46:11.957494 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.957494 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.957494 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.957494 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.959495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.959495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.959495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.960495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.960495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 20
+[Wed Nov 06 23:46:11.960495 2019] [php7:warn] [pid 3200:tid 1516] [client ::1:54262] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Thu Nov 07 01:00:24.305119 2019] [php7:error] [pid 3200:tid 1524] [client ::1:58351] PHP Fatal error:  Uncaught Error: Unsupported operand types in E:\\Vscode\\project\\PHP\\document.php:46\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(53): goo(Array)\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 46
+[Thu Nov 07 01:00:52.368724 2019] [php7:warn] [pid 3200:tid 1524] [client ::1:58379] PHP Warning:  A non-numeric value encountered in E:\\Vscode\\project\\PHP\\document.php on line 46
+[Thu Nov 07 01:00:52.369724 2019] [php7:error] [pid 3200:tid 1524] [client ::1:58379] PHP Fatal error:  Uncaught Error: Unsupported operand types in E:\\Vscode\\project\\PHP\\document.php:46\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(53): goo(Array)\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 46
+[Thu Nov 07 01:09:55.078730 2019] [mpm_winnt:notice] [pid 1588:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Nov 07 01:09:59.228337 2019] [mpm_winnt:notice] [pid 3200:tid 260] AH00364: Child: All worker threads have exited.
+[Thu Nov 07 01:10:07.636752 2019] [mpm_winnt:notice] [pid 1588:tid 368] AH00430: Parent: Child process 3200 exited successfully.
+[Thu Nov 07 19:54:29.802096 2019] [ssl:warn] [pid 1812:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 07 19:54:30.940898 2019] [ssl:warn] [pid 1812:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 07 19:54:45.615322 2019] [mpm_winnt:notice] [pid 1812:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Thu Nov 07 19:54:45.615322 2019] [mpm_winnt:notice] [pid 1812:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Thu Nov 07 19:54:45.615322 2019] [core:notice] [pid 1812:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Thu Nov 07 19:54:45.635322 2019] [mpm_winnt:notice] [pid 1812:tid 368] AH00418: Parent: Created child process 3332
+[Thu Nov 07 19:54:47.162925 2019] [ssl:warn] [pid 3332:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 07 19:54:47.209725 2019] [ssl:warn] [pid 3332:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 07 19:54:47.256525 2019] [mpm_winnt:notice] [pid 3332:tid 260] AH00354: Child: Starting 150 worker threads.
+[Thu Nov 07 22:32:32.628498 2019] [php7:error] [pid 3332:tid 1540] [client ::1:50466] PHP Fatal error:  Uncaught Error: Call to undefined function checkBack() in E:\\Vscode\\project\\temporary\\post.php:9\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\temporary\\post.php on line 9, referer: http://localhost/project/temporary/post.html
+[Thu Nov 07 22:35:26.595448 2019] [php7:error] [pid 3332:tid 1540] [client ::1:50496] PHP Fatal error:  Uncaught Error: Call to undefined function checkBack() in E:\\Vscode\\project\\temporary\\post.php:9\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\temporary\\post.php on line 9, referer: http://localhost/project/temporary/post.html
+[Thu Nov 07 22:35:38.251115 2019] [php7:error] [pid 3332:tid 1528] [client ::1:50498] PHP Fatal error:  Uncaught Error: Call to undefined function checkBack() in E:\\Vscode\\project\\temporary\\post.php:9\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\temporary\\post.php on line 9, referer: http://localhost/project/temporary/post.html
+[Fri Nov 08 00:22:51.332066 2019] [php7:warn] [pid 3332:tid 1540] [client ::1:55971] PHP Warning:  Use of undefined constant admin - assumed 'admin' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\temporary\\login.php on line 13, referer: http://localhost/project/temporary/login.html
+[Fri Nov 08 01:45:19.924109 2019] [php7:error] [pid 3332:tid 1528] [client ::1:57445] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function arrayTree(), 1 passed in E:\\Vscode\\project\\PHP\\document.php on line 38 and exactly 2 expected in E:\\Vscode\\project\\PHP\\document.php:18\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(38): arrayTree(Array)\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Fri Nov 08 01:46:00.770446 2019] [php7:error] [pid 3332:tid 1528] [client ::1:57452] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function arrayTree(), 0 passed in E:\\Vscode\\project\\PHP\\document.php on line 38 and exactly 2 expected in E:\\Vscode\\project\\PHP\\document.php:18\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(38): arrayTree()\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Fri Nov 08 01:46:47.569122 2019] [php7:error] [pid 3332:tid 1528] [client ::1:57473] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function arrayTree(), 0 passed in E:\\Vscode\\project\\PHP\\document.php on line 38 and at least 1 expected in E:\\Vscode\\project\\PHP\\document.php:18\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\document.php(38): arrayTree()\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\document.php on line 18
+[Fri Nov 08 01:53:40.651620 2019] [mpm_winnt:notice] [pid 1812:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Nov 08 01:53:43.350424 2019] [mpm_winnt:notice] [pid 3332:tid 260] AH00364: Child: All worker threads have exited.
+[Fri Nov 08 01:53:56.626047 2019] [mpm_winnt:notice] [pid 1812:tid 368] AH00430: Parent: Child process 3332 exited successfully.
+[Fri Nov 08 22:41:13.907649 2019] [ssl:warn] [pid 1944:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Nov 08 22:41:14.172850 2019] [ssl:warn] [pid 1944:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Nov 08 22:41:18.472457 2019] [mpm_winnt:notice] [pid 1944:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Fri Nov 08 22:41:18.472457 2019] [mpm_winnt:notice] [pid 1944:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Fri Nov 08 22:41:18.472457 2019] [core:notice] [pid 1944:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Fri Nov 08 22:41:18.482457 2019] [mpm_winnt:notice] [pid 1944:tid 368] AH00418: Parent: Created child process 3292
+[Fri Nov 08 22:41:20.412460 2019] [ssl:warn] [pid 3292:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Nov 08 22:41:20.462460 2019] [ssl:warn] [pid 3292:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Nov 08 22:41:20.512460 2019] [mpm_winnt:notice] [pid 3292:tid 260] AH00354: Child: Starting 150 worker threads.
+[Sat Nov 09 21:59:17.770968 2019] [php7:error] [pid 3292:tid 1536] [client ::1:57461] PHP Fatal error:  Uncaught Error: Function name must be a string in E:\\Vscode\\project\\PHP\\post\\login.php:31\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\post\\login.php on line 31, referer: http://localhost/project/PHP/post/login.html
+[Sat Nov 09 22:00:33.706312 2019] [php7:error] [pid 3292:tid 1532] [client ::1:57480] PHP Fatal error:  Uncaught Error: Function name must be a string in E:\\Vscode\\project\\PHP\\post\\login.php:31\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\post\\login.php on line 31, referer: http://localhost/project/PHP/post/login.html
+[Sat Nov 09 22:01:36.326893 2019] [php7:error] [pid 3292:tid 1532] [client ::1:57494] PHP Fatal error:  Uncaught Error: Function name must be a string in E:\\Vscode\\project\\PHP\\post\\login.php:32\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\post\\login.php on line 32, referer: http://localhost/project/PHP/post/login.html
+[Sat Nov 09 22:03:27.348243 2019] [php7:error] [pid 3292:tid 1536] [client ::1:57517] PHP Fatal error:  Uncaught Error: Function name must be a string in E:\\Vscode\\project\\PHP\\post\\login.php:32\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\post\\login.php on line 32, referer: http://localhost/project/PHP/post/login.html
+[Sun Nov 10 00:43:06.330128 2019] [php7:error] [pid 3292:tid 1536] [client ::1:58655] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 26, referer: http://localhost/project/PHP/goodscar/goods3.html
+[Sun Nov 10 00:43:16.506710 2019] [php7:error] [pid 3292:tid 1532] [client ::1:58657] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 26, referer: http://localhost/project/PHP/goodscar/goods1.html
+[Sun Nov 10 00:47:39.324743 2019] [php7:warn] [pid 3292:tid 1536] [client ::1:58947] PHP Warning:  Use of undefined constant gid - assumed 'gid' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 18, referer: http://localhost/project/PHP/goodscar/goods3.html
+[Sun Nov 10 00:47:54.380604 2019] [php7:warn] [pid 3292:tid 1532] [client ::1:58966] PHP Warning:  Use of undefined constant gid - assumed 'gid' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 18, referer: http://localhost/project/PHP/goodscar/goods3.html
+[Sun Nov 10 00:50:12.832523 2019] [php7:warn] [pid 3292:tid 1536] [client ::1:59099] PHP Warning:  Use of undefined constant gid - assumed 'gid' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 18, referer: http://localhost/project/PHP/goodscar/goods3.html
+[Sun Nov 10 00:50:35.775835 2019] [php7:warn] [pid 3292:tid 1532] [client ::1:59131] PHP Warning:  Use of undefined constant gid - assumed 'gid' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 18, referer: http://localhost/project/PHP/goodscar/goods1.html
+[Sun Nov 10 00:52:39.882933 2019] [php7:warn] [pid 3292:tid 1536] [client ::1:59272] PHP Warning:  Use of undefined constant gid - assumed 'gid' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\goodscar\\goodsCar.php on line 18, referer: http://localhost/project/PHP/goodscar/goods3.html
+[Sun Nov 10 01:39:20.057125 2019] [mpm_winnt:notice] [pid 1944:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Nov 10 01:39:23.629531 2019] [mpm_winnt:notice] [pid 3292:tid 260] AH00364: Child: All worker threads have exited.
+[Sun Nov 10 20:02:42.798452 2019] [ssl:warn] [pid 1740:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Nov 10 20:02:43.248453 2019] [core:warn] [pid 1740:tid 368] AH00098: pid file D:/XAMPP/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 10 20:02:43.248453 2019] [ssl:warn] [pid 1740:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Nov 10 20:02:46.534858 2019] [mpm_winnt:notice] [pid 1740:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Sun Nov 10 20:02:46.534858 2019] [mpm_winnt:notice] [pid 1740:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Sun Nov 10 20:02:46.534858 2019] [core:notice] [pid 1740:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Sun Nov 10 20:02:46.534858 2019] [mpm_winnt:notice] [pid 1740:tid 368] AH00418: Parent: Created child process 3400
+[Sun Nov 10 20:02:48.001261 2019] [ssl:warn] [pid 3400:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Nov 10 20:02:48.048061 2019] [ssl:warn] [pid 3400:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Nov 10 20:02:48.079261 2019] [mpm_winnt:notice] [pid 3400:tid 260] AH00354: Child: Starting 150 worker threads.
+[Sun Nov 10 22:50:08.489133 2019] [php7:error] [pid 3400:tid 1536] [client ::1:59836] PHP Fatal error:  Uncaught Error: Call to undefined function \xef\xbc\x81isset() in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php:11\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php on line 11, referer: http://localhost/project/PHP/goodscar/carList.php
+[Sun Nov 10 22:51:22.589372 2019] [php7:error] [pid 3400:tid 1536] [client ::1:59868] PHP Fatal error:  Uncaught Error: Call to undefined function \xef\xbc\x81isset() in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php:11\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php on line 11, referer: http://localhost/project/PHP/goodscar/carList.php
+[Sun Nov 10 22:58:43.146570 2019] [php7:error] [pid 3400:tid 1528] [client ::1:60288] PHP Fatal error:  Uncaught Error: Call to undefined function \xef\xbc\x81isset() in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php:11\nStack trace:\n#0 {main}\n  thrown in E:\\Vscode\\project\\PHP\\goodscar\\delCar.php on line 11, referer: http://localhost/project/PHP/goodscar/carList.php
+[Mon Nov 11 02:01:42.972978 2019] [mpm_winnt:notice] [pid 1740:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Nov 11 02:01:46.295784 2019] [mpm_winnt:notice] [pid 3400:tid 260] AH00364: Child: All worker threads have exited.
+[Mon Nov 11 20:45:23.075966 2019] [ssl:warn] [pid 2112:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 20:45:23.346982 2019] [core:warn] [pid 2112:tid 368] AH00098: pid file D:/XAMPP/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Nov 11 20:45:23.349982 2019] [ssl:warn] [pid 2112:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 20:45:27.792945 2019] [mpm_winnt:notice] [pid 2112:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Mon Nov 11 20:45:27.792945 2019] [mpm_winnt:notice] [pid 2112:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Mon Nov 11 20:45:27.792945 2019] [core:notice] [pid 2112:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Mon Nov 11 20:45:27.792945 2019] [mpm_winnt:notice] [pid 2112:tid 368] AH00418: Parent: Created child process 3368
+[Mon Nov 11 20:45:29.368548 2019] [ssl:warn] [pid 3368:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 20:45:29.415348 2019] [ssl:warn] [pid 3368:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 20:45:29.493348 2019] [mpm_winnt:notice] [pid 3368:tid 260] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 11 21:21:47.118918 2019] [mpm_winnt:notice] [pid 2112:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Nov 11 21:21:49.121033 2019] [mpm_winnt:notice] [pid 3368:tid 260] AH00364: Child: All worker threads have exited.
+[Mon Nov 11 21:21:49.215038 2019] [mpm_winnt:notice] [pid 2112:tid 368] AH00430: Parent: Child process 3368 exited successfully.
+[Mon Nov 11 21:21:53.000255 2019] [ssl:warn] [pid 1300:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 21:21:53.082260 2019] [ssl:warn] [pid 1300:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 21:21:53.147263 2019] [mpm_winnt:notice] [pid 1300:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Mon Nov 11 21:21:53.147263 2019] [mpm_winnt:notice] [pid 1300:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Mon Nov 11 21:21:53.147263 2019] [core:notice] [pid 1300:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Mon Nov 11 21:21:53.158264 2019] [mpm_winnt:notice] [pid 1300:tid 368] AH00418: Parent: Created child process 1660
+[Mon Nov 11 21:21:55.457395 2019] [ssl:warn] [pid 1660:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 21:21:55.535400 2019] [ssl:warn] [pid 1660:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Nov 11 21:21:55.607404 2019] [mpm_winnt:notice] [pid 1660:tid 260] AH00354: Child: Starting 150 worker threads.
+[Mon Nov 11 21:41:05.195157 2019] [php7:error] [pid 1660:tid 1528] [client 127.0.0.1:50234] script 'E:/Vscode/project/PHP/login_out/test.php' not found or unable to stat, referer: http://wcq.aaa.com/project/PHP/login_out/login.html
+[Mon Nov 11 21:42:01.449374 2019] [php7:error] [pid 1660:tid 1536] [client 127.0.0.1:50250] script 'E:/Vscode/project/PHP/login_out/test.php' not found or unable to stat, referer: http://wcq.aaa.com/project/PHP/login_out/login.html
+[Tue Nov 12 01:18:07.395984 2019] [php7:warn] [pid 1660:tid 1528] [client ::1:57502] PHP Warning:  Use of undefined constant aaa - assumed 'aaa' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\transcoding.php on line 19
+[Tue Nov 12 01:18:07.442987 2019] [php7:warn] [pid 1660:tid 1528] [client ::1:57502] PHP Warning:  crypt() expects parameter 2 to be string, array given in E:\\Vscode\\project\\PHP\\transcoding.php on line 19
+[Tue Nov 12 01:35:56.205116 2019] [php7:warn] [pid 1660:tid 1536] [client ::1:57979] PHP Warning:  Use of undefined constant a - assumed 'a' (this will throw an Error in a future version of PHP) in E:\\Vscode\\project\\PHP\\encry&decry\\encry.php on line 14
+[Tue Nov 12 01:45:15.995134 2019] [php7:warn] [pid 1660:tid 1536] [client ::1:58155] PHP Warning:  Wrong parameter count for chr() in E:\\Vscode\\project\\PHP\\encry&decry\\encry.php on line 3
+[Tue Nov 12 01:45:15.995134 2019] [php7:warn] [pid 1660:tid 1536] [client ::1:58155] PHP Warning:  ord() expects exactly 1 parameter, 0 given in E:\\Vscode\\project\\PHP\\encry&decry\\encry.php on line 4
+[Tue Nov 12 02:22:07.372449 2019] [mpm_winnt:notice] [pid 1300:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Nov 12 02:22:11.381656 2019] [mpm_winnt:notice] [pid 1660:tid 260] AH00364: Child: All worker threads have exited.
+[Tue Nov 12 02:22:26.076881 2019] [mpm_winnt:notice] [pid 1300:tid 368] AH00430: Parent: Child process 1660 exited successfully.
+[Tue Nov 12 20:52:09.303139 2019] [ssl:warn] [pid 1516:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 12 20:52:09.615139 2019] [ssl:warn] [pid 1516:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 12 20:52:14.809948 2019] [mpm_winnt:notice] [pid 1516:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Tue Nov 12 20:52:14.809948 2019] [mpm_winnt:notice] [pid 1516:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Tue Nov 12 20:52:14.809948 2019] [core:notice] [pid 1516:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Tue Nov 12 20:52:14.887948 2019] [mpm_winnt:notice] [pid 1516:tid 368] AH00418: Parent: Created child process 3496
+[Tue Nov 12 20:52:16.393379 2019] [ssl:warn] [pid 3496:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 12 20:52:16.440382 2019] [ssl:warn] [pid 3496:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Nov 12 20:52:16.493385 2019] [mpm_winnt:notice] [pid 3496:tid 260] AH00354: Child: Starting 150 worker threads.
+[Tue Nov 12 21:10:10.237606 2019] [php7:crit] [pid 3496:tid 1536] [client ::1:49499] PHP Parse error:  syntax error, unexpected end of file in E:\\Vscode\\project\\PHP\\ajaxlog\\check.php on line 25, referer: http://localhost/project/PHP/ajaxlog/
+[Tue Nov 12 21:12:03.096061 2019] [php7:warn] [pid 3496:tid 1536] [client ::1:49538] PHP Warning:  Invalid argument supplied for foreach() in E:\\Vscode\\project\\PHP\\ajaxlog\\check.php on line 24, referer: http://localhost/project/PHP/ajaxlog/
+[Tue Nov 12 21:23:50.687533 2019] [php7:warn] [pid 3496:tid 1540] [client ::1:49787] PHP Warning:  json_decode() expects parameter 1 to be string, array given in E:\\Vscode\\project\\PHP\\ajaxlog\\check.php on line 32, referer: http://localhost/project/PHP/ajaxlog/login.html
+[Tue Nov 12 21:23:52.425632 2019] [php7:warn] [pid 3496:tid 1540] [client ::1:49787] PHP Warning:  json_decode() expects parameter 1 to be string, array given in E:\\Vscode\\project\\PHP\\ajaxlog\\check.php on line 32, referer: http://localhost/project/PHP/ajaxlog/login.html
+[Wed Nov 13 03:06:54.028675 2019] [mpm_winnt:notice] [pid 1516:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed Nov 13 03:06:58.334282 2019] [mpm_winnt:notice] [pid 3496:tid 260] AH00364: Child: All worker threads have exited.
+[Wed Nov 13 20:55:42.891651 2019] [ssl:warn] [pid 1988:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 13 20:55:43.211652 2019] [core:warn] [pid 1988:tid 368] AH00098: pid file D:/XAMPP/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Nov 13 20:55:43.211652 2019] [ssl:warn] [pid 1988:tid 368] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 13 20:55:48.622859 2019] [mpm_winnt:notice] [pid 1988:tid 368] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Wed Nov 13 20:55:48.622859 2019] [mpm_winnt:notice] [pid 1988:tid 368] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Wed Nov 13 20:55:48.622859 2019] [core:notice] [pid 1988:tid 368] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Wed Nov 13 20:55:48.622859 2019] [mpm_winnt:notice] [pid 1988:tid 368] AH00418: Parent: Created child process 3576
+[Wed Nov 13 20:55:50.120462 2019] [ssl:warn] [pid 3576:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 13 20:55:50.151662 2019] [ssl:warn] [pid 3576:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 13 20:55:50.214062 2019] [mpm_winnt:notice] [pid 3576:tid 260] AH00354: Child: Starting 150 worker threads.
+[Thu Nov 14 02:18:52.890443 2019] [mpm_winnt:notice] [pid 1988:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Nov 14 02:18:57.320851 2019] [mpm_winnt:notice] [pid 3576:tid 260] AH00364: Child: All worker threads have exited.
+[Thu Nov 14 20:18:06.550447 2019] [ssl:warn] [pid 1176:tid 372] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 14 20:18:06.753247 2019] [core:warn] [pid 1176:tid 372] AH00098: pid file D:/XAMPP/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Nov 14 20:18:06.753247 2019] [ssl:warn] [pid 1176:tid 372] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 14 20:18:11.521256 2019] [mpm_winnt:notice] [pid 1176:tid 372] AH00455: Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.8 configured -- resuming normal operations
+[Thu Nov 14 20:18:11.521256 2019] [mpm_winnt:notice] [pid 1176:tid 372] AH00456: Apache Lounge VC15 Server built: May 29 2019 11:22:50
+[Thu Nov 14 20:18:11.521256 2019] [core:notice] [pid 1176:tid 372] AH00094: Command line: 'D:\\xampp\\apache\\bin\\httpd.exe -d D:/XAMPP/apache'
+[Thu Nov 14 20:18:11.631256 2019] [mpm_winnt:notice] [pid 1176:tid 372] AH00418: Parent: Created child process 3364
+[Thu Nov 14 20:18:13.364859 2019] [ssl:warn] [pid 3364:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 14 20:18:13.411659 2019] [ssl:warn] [pid 3364:tid 260] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 14 20:18:13.630059 2019] [mpm_winnt:notice] [pid 3364:tid 260] AH00354: Child: Starting 150 worker threads.
+[Thu Nov 14 21:18:25.908322 2019] [php7:warn] [pid 3364:tid 1536] [client ::1:49710] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:19:43.673770 2019] [php7:warn] [pid 3364:tid 1536] [client ::1:49721] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:19:45.581879 2019] [php7:warn] [pid 3364:tid 1536] [client ::1:49721] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:20:45.892329 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49734] PHP Warning:  fopen(./file/test.txt): failed to open stream: No error in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 10, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:20:45.938331 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49734] PHP Warning:  fread() expects parameter 1 to be resource, bool given in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:20:45.938331 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49734] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 13, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:23:28.552632 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49764] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:26:09.721851 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49793] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 21:26:51.035214 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:49802] PHP Warning:  fread(): Length parameter must be greater than 0 in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 11, referer: http://localhost/project/PHP/files/
+[Thu Nov 14 22:16:31.043660 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:50301] PHP Warning:  file_get_contents(./file/text.txt): failed to open stream: No such file or directory in E:\\Vscode\\project\\PHP\\files\\getfile.php on line 5
+[Thu Nov 14 22:17:42.483747 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:50303] PHP Warning:  file_get_contents(file/text.txt): failed to open stream: No such file or directory in E:\\Vscode\\project\\PHP\\files\\getfile.php on line 5
+[Thu Nov 14 22:39:04.378067 2019] [php7:error] [pid 3364:tid 1532] [client ::1:50467] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 50
+[Thu Nov 14 22:42:15.422994 2019] [php7:error] [pid 3364:tid 1532] [client ::1:50477] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 50
+[Thu Nov 14 22:43:03.333734 2019] [php7:error] [pid 3364:tid 1532] [client ::1:50481] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 50
+[Thu Nov 14 22:43:16.500487 2019] [php7:error] [pid 3364:tid 1536] [client ::1:50485] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 50
+[Thu Nov 14 22:44:35.424002 2019] [php7:error] [pid 3364:tid 1536] [client ::1:50495] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 51
+[Thu Nov 14 22:46:36.446924 2019] [php7:error] [pid 3364:tid 1536] [client ::1:50506] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\\Vscode\\project\\PHP\\files\\readfile.php on line 50
+[Thu Nov 14 23:27:04.102778 2019] [php7:warn] [pid 3364:tid 1536] [client ::1:50717] PHP Warning:  rename(./file/test2.txt,./file/text3.txt): \xcf\xb5\xcd\xb3\xef\xbf\xbd\xd2\xb2\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xd6\xb8\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc4\xbc\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd (code: 2) in E:\\Vscode\\project\\PHP\\files\\renamefile.php on line 8
+[Fri Nov 15 00:06:52.363378 2019] [php7:error] [pid 3364:tid 1532] [client ::1:50918] PHP Fatal error:  Uncaught Error: Call to undefined method app\\file\\Myclass::isFileExists() in E:\\Vscode\\project\\PHP\\files\\Myclass.php:31\nStack trace:\n#0 E:\\Vscode\\project\\PHP\\files\\useMyclass.php(7): app\\file\\Myclass->createFile('./file/test3.tx...')\n#1 {main}\n  thrown in E:\\Vscode\\project\\PHP\\files\\Myclass.php on line 31
+[Fri Nov 15 00:48:41.108870 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:51483] PHP Warning:  filesize(): stat failed for ../file/test4 in E:\\Vscode\\project\\PHP\\files\\document\\getfilesize.php on line 3
+[Fri Nov 15 00:49:54.569072 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:51504] PHP Warning:  filesize(): stat failed for ../file/test4 in E:\\Vscode\\project\\PHP\\files\\document\\getfilesize.php on line 3
+[Fri Nov 15 00:53:47.607401 2019] [php7:warn] [pid 3364:tid 1532] [client ::1:51556] PHP Warning:  filesize(): stat failed for ../file/test4 in E:\\Vscode\\project\\PHP\\files\\document\\getfilesize.php on line 3

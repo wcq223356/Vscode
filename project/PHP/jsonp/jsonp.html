@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="weather/jquery.js"></script>
+    <script>
+
+        $(function () {
+
+
+            //获取github信息
+            // $.getJSON('https://api.github.com/users/wcq223356', function (data) {
+            //     console.log(data)
+            // })
+
+            //获取城市天气信息
+            // https://www.tianqiapi.com/api/?version=v1&city=厦门&appid=51622171&appsecret=vUqrU7ka
+            // $.getJSON('https://www.tianqiapi.com/api/?version=v1&cityid=101110101&appid=51622171&appsecret=vUqrU7ka',
+            //     function (data) {
+            //         console.log(data);
+            //     }
+            //
+            // )
+
+            // 获取360搜索框信息
+            $.ajax({
+                type: 'GET',
+                url: 'https://sug.so.360.cn/suggest',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                data: {
+                    encodein: 'utf-8',
+                    encodeout: 'utf-8',
+                    word: 'wcq'
+                }
+
+            })
+                .then(
+                    res => {
+                        console.log(res.s)
+                    }
+
+                )
+
+
+
+        })
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>search</title>
+    <link rel="stylesheet" type="text/css" href="search.css"/>
+    <script src="../weather/jquery.js"></script>
+    <script>
+        $(function () {
+
+            // $("#txt").bind('input propertychange',function (){
+            //     $('#list').addClass('p2');
+            //     $('#list').html('');
+            //     let word = $('#txt').val();
+            //     if (word == ''){
+            //         $('#list').removeClass('p2');
+            //     }
+            //
+            //     $.ajax({
+            //         type: 'GET',
+            //         url: 'https://sug.so.360.cn/suggest',
+            //         dataType: 'jsonp',
+            //         jsonp: 'callback',
+            //         data: {
+            //             encodein: 'utf-8',
+            //             encodeout: 'utf-8',
+            //             word: word
+            //         }
+            //
+            //     })
+            //         .then(
+            //             res => {
+            //                res.s.forEach(function (item) {
+            //                     $('#list').append(`<ul>
+            //                         <li>${item}</li>
+            //                     </ul>`)
+            //                 })
+            //             }
+            //         )
+            // })
+            //
+            // $('#list').on("mouseover mouseout", 'li', function(event){
+            //     if(event.type == "mouseover"){
+            //         $(this).css("background-color","blue");
+            //         $('#txt').val($(this).text());
+            //     }else if(event.type == "mouseout"){
+            //         $(this).css("background-color","#fff");
+            //         $('#txt').val('');
+            //     }
+            // })
+
+            // $('#list').on("click", "li", function () {
+            //     console.log('1212')
+            // })
+            //
+            let index = 0,
+                length = 0,
+                arr = [];
+
+            $('#txt').keyup(function (event) {
+                console.log(event.which)  //查询按键的which值
+                let keycode = event.which;
+                let keyfunction = arguments.callee;    //arguments.callee 必须要拥有父级方法，相当于存储当前的方法
+                if (keycode > 61 && keycode < 91) {
+                    $(this).unbind("keyup");
+
+                    $.ajax({
+                                type: 'GET',
+                                url: 'https://sug.so.360.cn/suggest',
+                                dataType: 'jsonp',
+                                jsonp: 'callback',
+                                data: {
+                                    encodein: 'utf-8',
+                                    encodeout: 'utf-8',
+                                    word: $('#txt').val()
+                                }
+
+                            })
+                                .then(
+                                    res => {
+                                        console.log(res.s);
+                                        if(res.s instanceof Array && res.s.length > 0) {
+
+
+                                        $('#list').html('');
+                                        arr = [$('#list').val()];
+                                        arr = arr.concat(res.s);
+                                        length = arr.length;
+
+                                       arr.forEach(function (item, index) {if (index > 0) {
+                                               $('#list').append(`<ul>
+                                                <li>${item}</li>
+                                            </ul>`);
+                                           }
+                                        });
+
+                                       $('#list').show();
+                                    }
+                                       $('#txt').bind('keyup', keyfunction);
+                                    }
+                                );
+
+                } else if(keycode == 38 || keycode == 40 && $('#txt').val() != '') {
+
+                    // 按下
+                        if(keycode == 40) {
+
+                            console.log('111')
+
+                            $('#list ul li').css("background-color", "#ffffff");
+
+                            if (index < 0) {
+                                $(this).val(arr[0]);
+                            } else {
+                                $('#list ul li').eq(index).css("background-color", "blue");
+                                $('#txt').val($('#list ul li').eq(index).html());
+
+                            }
+                        }
+
+
+                    index++;
+                    if(index >= length - 1) {
+                        index = -1;
+                    }
+
+                }
+
+
+            })
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <div id="content">
+        <p><input type="text" name="txt" id="txt"><button id="search">搜索</button></p>
+        <div id="list">
+<!--            <ul>-->
+<!--                <li>进口量供货商法律</li>-->
+<!--                <li>法兰克哈</li>-->
+<!--                <li>撒大沙发</li>-->
+<!--                <li>实时上色多多多</li>-->
+<!--                <li>少时诵诗书</li>-->
+<!--                <li>说是的发送到</li>-->
+<!--            </ul>-->
+        </div>
+    </div>
+</body>
+</html>

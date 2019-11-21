@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天室</title>
+    <script src="chat.js" type="module"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #chatContent{
+            width: 600px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="chatContent"></div>
+    <hr>
+    <p>用户名：<input type="text" name="username" id="username"></p>
+    <p><textarea id="txt" name="msg"></textarea></p>
+    <button id="send">发送</button>
+</body>
+</html>

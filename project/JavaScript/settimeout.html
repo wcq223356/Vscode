@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 用setTimeout效果做出setInterval,以下效果为点击按钮数字每1S增加1 -->
+    <p id="view"></p>
+    <button id="star">开始</button>
+    <button id="stop">暂停</button>
+
+
+    <script>
+        document.getElementById('view').innerHTML = 0;
+        let starBut = document.getElementById('star');
+        let stopBut = document.getElementById('stop');
+        let num = 0
+        function foo() {
+            num++
+            t = setTimeout(foo, 1000);
+            document.getElementById('view').innerHTML = num;
+        }
+
+        starBut.onclick = function () {
+            foo();
+            starBut.disabled = true;
+        }
+
+        stopBut.onclick = function () {
+            clearTimeout(t);
+            starBut.disabled = false;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

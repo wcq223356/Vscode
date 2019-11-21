@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #box1 {
+            position: absolute;
+            /* left: 0; */
+            width: 100px;
+            height: 100px;
+            background-color: rgb(150, 250, 50);
+            display: none;
+        }
+
+        #box2 {
+            position: absolute;
+            /* right: 0; */
+            width: 100px;
+            height: 100px;
+            background-color: rgb(205, 90, 171);
+            display: none;
+        }
+
+        #box3 {
+            position: absolute;
+            /* right: 0; */
+            width: 100px;
+            height: 100px;
+            background-color: rgb(90, 205, 138);
+            /* display: none */
+        }
+
+        #box4 {
+            position: absolute;
+            /* right: 0; */
+            width: 100px;
+            height: 100px;
+            background-color: rgb(179, 37, 48);
+            display: none;
+        }
+
+        #box5 {
+            position: absolute;
+            /* right: 0; */
+            width: 100px;
+            height: 100px;
+            background-color: slateblue;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            // $('div').eq(0).siblings().fadeOut(3000);
+
+            // $('div').eq(0).fadeIn(5000)
+            let index = 0
+
+            function foo() {
+                index++
+                if (index > 4) {
+                    index = 0
+                }
+                $('div').eq(index).siblings().fadeOut(10000);
+                $('div').eq(index).fadeIn(5000)
+
+                setTimeout(foo, 3000);
+            }
+            foo();
+        })
+    </script>
+</head>
+
+<body>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+</body>
+
+</html>

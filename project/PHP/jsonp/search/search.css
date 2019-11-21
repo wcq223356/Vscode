@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#content{
+    width: auto;
+    /*background-color: #00F7DE;*/
+}
+p{
+    height: 30px;
+    padding-left: 10px;
+    display: inline;
+    line-height: 30px;
+}
+
+#txt{
+    width: 350px;
+    height: 25px;
+}
+#search{
+    width: 50px;
+    height: 28px;
+}
+
+#list{
+    margin-left: 10px;
+    width: 400px;
+    border: 1px solid #000000;
+    display: none;
+}
+.p2{
+    border: 1px solid #2B2E37;
+}
+
+
+li{
+    list-style: none;
+
+}

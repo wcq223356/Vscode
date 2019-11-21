@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* div{
+           border: solid 1px blue;
+           width: 100px;
+           height: 200px; 
+           
+        } */
+
+        div #box1 {
+            border: solid 1px blue;
+            width: 100px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 20px;
+            float: left;
+            text-align: center;
+        }
+
+        div #box2 {
+            border: solid 1px blue;
+            width: 100px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            float: left;
+            text-align: center;
+        }
+
+        /* div #box2 p {
+
+            padding: 4px;
+        } */
+
+        div #btn {
+            margin-top: 100px;
+            margin-left: 60px;
+            float: left;
+            padding: 50px 0;
+        }
+
+        p {
+            padding: 4px;
+        }
+
+        .p2 {
+            padding: 4px;
+            background-color: cornflowerblue;
+            color: #fff;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px 0;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>1
+    <div id="box">
+        <div id="box1">
+            <p>文本1</p>
+            <p>文本2</p>
+            <p>文本3</p>
+            <p>文本4</p>
+            <p>文本5</p>
+            <p>文本6</p>
+            <p>文本7</p>
+        </div>
+        <div id="btn">
+            <a id="btn1">==&gt;</a><br>
+            <a id="btn2">&lt;==</a>
+        </div>
+
+        <div id="box2">
+
+        </div>
+        <button id="getCode">获取数据</button>
+        <h4 id="view"></h4>
+    </div>
+
+
+    <script>
+
+        $(function () {
+            $('div#box1 p').click(function () {
+                $(this).toggleClass('p2');
+            })
+        })
+
+        // $('div#btn a#btn1').click(function () {
+        //     $('div#box1 p.p2').appendTo('div#box2');
+        //     $('div#box2 p.p2').removeClass('p2')
+        // })
+
+        // $('div#btn a#btn2').click(function () {
+        //     $('div#box2 p.p2').appendTo('div#box1');
+        //     $('div#box1 p.p2').removeClass('p2')
+        // })
+
+            $('div#btn a').click(function () {
+                
+                let x = ($(this).html() =='==&gt;' ) ? 'box1' : 'box2';
+                let y = ($(this).html() =='&lt;==') ? 'box1' : 'box2';
+                $('#'+y).append($('#'+ x +' p.p2'));
+                $('#'+ y +' p.p2').removeClass('p2');
+
+                console.log($('#'+x))
+                console.log($('#'+y))
+             
+            })
+ 
+
+
+        $('#getCode').click(function () { 
+                $('div#box2 p').text();
+                $('h4').html( $('div#box2 p').text())
+             })
+      
+    </script>
+
+
+
+
+
+</body>
+
+</html>

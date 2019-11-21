@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 用来判断成绩
+    //     let num = prompt('请输入')
+    //     switch (true) {
+    //         case (num > 100):
+    //             document.write('您输入的数字有误');
+    //             break;
+    //         case (num >= 90):
+    //             document.write('优秀');
+    //             break;
+    //         case (num >= 80):
+    //             document.write('良好');
+    //             break;
+    //         case (num >= 60):
+    //             document.write('及格');
+    //             break;
+    //         case (num < 60 && num >=0):
+    //             document.write('不及格');
+    //             break;
+    //         case (num < 0):
+    //             document.write('您输入的数字有误');
+    //             break;
+    //         default:
+    //             document.write('请输出正确的值');
+    //             break;
+
+    //     }
+    // </script>
+    
+    <input type="text" id="num1">
+    <select name="type" id="type">
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mul">*</option>
+        <option value="div">/</option>
+    </select>
+    <input type="text" id="num2">
+    <button onclick="calc()">=</button>
+    <input type="text" id="result" readonly>
+    <!-- （readonly 可以让输入框中的东西无法修改） -->
+
+    <script>
+        function calc() {
+            let num1 = Number(document.getElementById('num1').value),
+                num2 = Number(document.getElementById('num2').value),
+                type = document.getElementById('type').value;
+
+            // 通过input、 prompt 获得的值都是字符串，如果运算需要转成数字类型可以用 整形parseInt 或者
+            // 浮点 parseFloat 或者直接 Number 来改数据类型。
+
+
+            let result = 0
+            switch (type) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'sub':
+                    result = num1 - num2;
+                    break;
+                case 'mul':
+                    result = num1 * num2;
+                    break;
+                case 'div':
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        result = result.toFixed(2);    //.toFixed是用来保留小数位数，括号里面数字是几就保留几位
+                    } else {
+                        result = 'error'
+                    }
+                    
+                    // num2 != 0 ? result = num1/num2 : result = 'error';
+                    //这行三元代码效果和上面的if语句一样
+                    
+                    break;
+
+                default:
+                    result = 0
+
+            }
+
+            document.getElementById('result').value = result;
+
+        }
+            // 三元运算符
+            // （条件）？ ‘当条件为真结果1’ ： ‘否则结果2’
+    </script>
+</body>
+
+</html>

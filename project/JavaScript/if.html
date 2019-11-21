@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        成绩：<input type="text" id="cj"> <button id="btn">提交</button>
+    <script>
+        document.getElementById('btn').onclick = function (){
+
+            let number = document.getElementById('cj').value;
+            // console.log(number)
+
+            if (number >= 90) {
+                document.write('优秀');
+            } else if (number >=80) {
+                document.write('良好');
+            } else if (number >=60) {
+                document.write('及格')
+            } else {
+                document.write('不及格') 
+            }  
+        }
+    </script>
+
+    <!-- <script>
+        document.getElementById('btn').onclick = function (){
+
+            let number = document.getElementById('cj').value;
+          
+            if (number < 60) {
+                document.write('不及格');
+            } else if (number >=60 && number<80) {
+                document.write('及格');
+            } else if (number >=80 && number<90) {
+                document.write('良好')
+            } else {
+                document.write('优秀') 
+            }  
+        }
+    </script> -->
+
+    <!-- <script>
+        let type = prompt('请输入数字','')
+        console.log(type)    
+    </script> -->
+    <!-- <script>
+        function disprompt(){
+            let type = prompt('请输入数字')
+            if (type%2 == 0) {
+                document.write('偶数')   
+            } else if (type%2 == 1) {
+                document.write('奇数')
+            } else if(type>0) {
+                document.write('正数')
+            } else if(type < 0) {
+                document.write('负数')
+            } else {
+                document.write('非数字')
+            }  
+        }
+    </script>
+    <input type="button" onclick="disprompt()" value="请点击输入">
+    <h4 id="result"></h4> -->
+</body>
+</html>

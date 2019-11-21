@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+div ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+/*.dirbg ul li{*/
+/*    display: inline;*/
+/*}*/
+
+img{
+    width: 32px;
+    height: 32px;
+}

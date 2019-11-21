@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- <body>
+    <input type="checkbox" id="all">全选
+
+    <br>
+    <input type="checkbox" class="single">a
+    <input type="checkbox" class="single">b
+    <input type="checkbox" class="single">c
+
+
+
+    <script>
+        document.getElementById('all').onclick = function (event) {
+            document.querySelectorAll('.single').forEach(function (item) {
+                item.checked = event.target.checked;
+            })
+        }
+    </script> -->
+
+
+    <!-- 和上面的相比多了个lable标签，当点击‘全选’这两个字也有效果，同时onclick事也可以换成onchange事件 -->
+    <!-- <label ><input type="checkbox" id="all">全选</label>
+
+        <br>
+        <input type="checkbox" class="single">a
+        <input type="checkbox" class="single">b
+        <input type="checkbox" class="single">c
+    
+    
+    
+    <script>
+            document.getElementById('all').onchange = function (event) {
+                document.querySelectorAll('.single').forEach(function (item) {
+                    item.checked = event.target.checked;
+                })
+            }
+    
+    
+    </script> -->
+
+
+    <input type="checkbox" id="all">反选
+
+
+    <br>
+    <input type="checkbox" class="single" checked>a
+    <input type="checkbox" class="single">b
+    <input type="checkbox" class="single" checked>c
+
+
+
+    <script>
+        document.getElementById('all').onclick = function (event) {
+            document.querySelectorAll('.single').forEach(function (item) {
+                    item.checked =  !item.checked;
+            })
+        }
+    </script>
+
+</body >
+</html >

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #container {
+            position: relative;
+            left: 30%;
+            width: 400 px;
+            height: auto;
+            text-align: center;
+
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 185px;
+            height: auto;
+            overflow: hidden;
+            margin: 5px 5px;
+            float: left;
+            border: solid 1px #ff0000;
+            text-align: center;
+        }
+
+        .box ul li.img {
+
+
+            display: block;
+        }
+
+        img.pic {
+            width: 150px;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="container">
+
+
+
+        </div>
+
+    </body>
+    <script>
+        let goodsList = [{
+            goodsDescribe: '诸葛',
+            goodsImgSrc: '../img/a.jpg',
+            goodsPrice: 18888
+        },
+        {
+            goodsDescribe: '白起',
+            goodsImgSrc: '../img/qqyy.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '虞姬',
+            goodsImgSrc: '../img/qqyy.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '阿离',
+            goodsImgSrc: '../img/bdbri_72.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '诸葛',
+            goodsImgSrc: '../img/c.jpg',
+            goodsPrice: 18888
+        },
+        {
+            goodsDescribe: '白起',
+            goodsImgSrc: '../img/tuiguang_72.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '虞姬',
+            goodsImgSrc: '../img/camera_new_x2_fb6c085.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '阿离',
+            goodsImgSrc: '../img/d.jpg',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '阿离',
+            goodsImgSrc: '../img/bdbri_72.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '诸葛',
+            goodsImgSrc: '../img/c.jpg',
+            goodsPrice: 18888
+        },
+        {
+            goodsDescribe: '白起',
+            goodsImgSrc: '../img/tuiguang_72.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '虞姬',
+            goodsImgSrc: '../img/camera_new_x2_fb6c085.png',
+            goodsPrice: 13888
+        },
+        {
+            goodsDescribe: '阿离',
+            goodsImgSrc: '../img/d.jpg',
+            goodsPrice: 13888
+        }
+        ];
+
+        goodsList.forEach(function (item, index) {
+
+            document.getElementById('container').innerHTML +=
+                "<div class = 'box'>" + "<ul>" +
+                "<li class='img'><img src='" + item.goodsImgSrc + "' class = 'pic'></li>" +
+                "<li><a>" + item.goodsDescribe + "</a></li>" +
+                "<li>价格：￥<span>" + item.goodsPrice + "</span></li>" +
+                "</ul>" + "</div>";
+        })
+
+
+        window.onload = function () {
+
+
+            document.querySelectorAll('.box').forEach(function (item, index) {
+
+                let nextBox = document.querySelectorAll('.box')[index - 2];
+
+                if (index >= 2) {
+
+                    item.style.top = nextBox.offsetTop + nextBox.offsetHeight + 10 + 'px';
+                }
+
+                if (index % 2 != 0) {
+
+                    item.style.left = 185 + 10 + 'px'
+                }
+
+            })
+        }
+
+
+
+
+    </script>
+
+</html>
+</body>
+
+</html>

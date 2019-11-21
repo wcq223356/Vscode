@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="Huploadify.css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.Huploadify.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+$(function(){
+	var up = $('#upload').Huploadify({
+		auto:true,
+		// fileTypeExts:'*.jpg;*',
+		multi:true,
+		formData:{key:123456,key2:'vvvv'},
+		// fileSizeLimit:1024000,
+        fileObjName:'file',
+		showUploadedPercent:true,
+		showUploadedSize:true,
+		removeTimeout:1000,
+		uploader:'upload.php',
+		onUploadStart:function(file){
+			console.log(file.name+'开始上传');
+		},
+		onInit:function(obj){
+			console.log('初始化');
+			console.log(obj);
+		},
+		onUploadComplete:function(file, data,){
+			// console.log(file.name+'上传完成');
+            data = eval("("+data+")");
+            if (data.stateCode == 200) {
+                $("#content").append(`<div>
+                   <img src= ${data.data}>
+                   <a class="delete">删除</a>
+               </div>`);
+            }
+
+		},
+	// 	onCancel:function(file){
+	// 		console.log(file.name+'删除成功');
+	// 	},
+	// 	onClearQueue:function(queueItemCount){
+	// 		console.log('有'+queueItemCount+'个文件被删除了');
+	// 	},
+	// 	onDestroy:function(){
+	// 		console.log('destroyed!');
+	// 	},
+	// 	onSelect:function(file){
+	// 		console.log(file.name+'加入上传队列');
+	// 	},
+	// 	onQueueComplete:function(queueData){
+	// 		console.log('队列中的文件全部上传完成',queueData);
+	// 	}
+	});
+
+        $('#content').on('click', 'a.delete', function () {
+            let src = $(this).prev().attr('src');
+            let $that = $(this);    //定义一个变量存储$（this）的值，因为ajax回调后this指向已经改变了
+            $.get('delete.php?src='+src,function (data) {
+                data = JSON.parse(data);
+                if (data.stateCode ==200) {
+                    $that.parent().remove();
+                }
+
+            })
+
+
+        })
+
+
+
+	// $('#btn2').click(function(){
+	// 	up.upload('*');
+	// });
+	// $('#btn3').click(function(){
+	// 	up.cancel('*');
+	// });
+	// $('#btn4').click(function(){
+	// 	//up.disable();
+	// 	up.Huploadify('disable');
+	// });
+	// $('#btn5').click(function(){
+	// 	up.ennable('*');
+	// });
+	// $('#btn6').click(function(){
+	// 	up.destroy();
+	// });
+});
+</script>
+</head>
+
+<body>
+<div id="upload"></div>
+<!--<button id="btn2">upload</button>-->
+<!--<button id="btn3">cancel</button>-->
+<!--<button id="btn4">disable</button>-->
+<!--<button id="btn5">ennable</button>-->
+<!--<button id="btn6">destroy</button>-->
+<div id="content"></div>
+</body>
+</html>

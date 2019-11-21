@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>while循环</title>
+</head>
+<body>
+    <script>
+    let i = 1;
+    let j = 0;
+    while (i <= 100) {
+       
+        
+        j = j + i;
+        i++;                //值得注意的是，i++的位置要放在计算式的后面得到的是正确的结果5050，如果放在前面得到的结果是5150
+                            //因为i++在后面当i=100的时候，下一次i=101，与判断条件不合适，因此循环终止；但如果放在前面，i会加到
+                            //101，直接导致最终结果大了100。
+        console.log(j) 
+    }   
+    </script>
+    <!-- <script>
+        let i = 1;
+        let j = 0;
+        do {
+            j = j + i;
+            i++
+        } while(i <= 100)
+        console.log(j)
+    </script> -->
+</body>
+</html>

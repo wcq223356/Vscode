@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/jquery-cookie/jquery.cookie.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        $(function () {
+
+
+            // $.cookie('name', 'wangwang');   //创建
+            // $.removeCookie('name')          //删除
+            //     console.log($.cookie())
+
+            if($.cookie('username')){
+                $('#mes').val($.cook('mes'));
+            }
+
+            $('#btn').click(function () {
+                $.cookie('meg', $('#msg').val(), {path:"/",expires:1})
+            })
+
+
+        })
+        console.log($.cookie('meg'))
+      
+
+    </script>
+   <p> <input type="text" id="msg" value=""> </p>
+    <input type="button" value="存储信息" id="btn">
+
+
+</body>
+
+</html>

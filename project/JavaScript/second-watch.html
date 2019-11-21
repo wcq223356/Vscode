@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="view"></p>
+    <button id="star">开始</button>
+    <button id="pause">暂停</button>
+    <button id="end">结束</button>
+
+    <!-- <script>
+        // 申明变量
+        let starTime = 0;    
+        // let nowTime = 0;
+        let times = 0;
+        let pauseTime = 0
+        let starBut = document.getElementById('star');
+        let pauseBut = document.getElementById('pause');
+        let endBut = document.getElementById('end');
+        let viewTime = document.getElementById('view');
+        viewTime.innerHTML = '00:00:00';
+
+
+        // 创建延迟执行函数
+        function foo() {
+
+            nowTime = new Date().getTime();
+            times = nowTime - starTime + pauseTime;
+
+            let minute = parseInt(times / 1000 / 60 % 60);
+            minute = (minute < 10) ? '0' + minute : minute;
+
+            let second = parseInt(times / 1000 % 60);
+            second = (second < 10) ? '0' + second : second;
+
+            let miniSecond = String((times % 1000)).substring(0, 2);
+
+            viewTime.innerHTML = minute + ':' + second + ':' + miniSecond
+
+            t = setTimeout(foo, 100);
+        }
+
+        //点击开始时执行
+        starBut.onclick = function () {
+            starTime = new Date().getTime();
+            starBut.disabled = true;
+            foo();
+        }
+
+        // 点击暂停时执行
+        pauseBut.onclick = function () {
+            clearTimeout(t);
+            pauseTime = times;
+            starBut.disabled = false;
+            
+        }
+        
+        // 点击结束时执行
+        endBut.onclick = function () {
+            clearTimeout(t);
+            pauseTime = 0;
+            starBut.disabled = false;
+            viewTime.innerHTML = '00:00:00';
+        }
+
+
+    </script> -->
+
+
+    <!-- -------------------------------------以定义对象的方法--------------------------------------- -->
+    <h1 id="strTimes">00:00.00</h1>
+    <button id="start">开始</button>
+    <button id="pause">暂停</button>
+    <button id="stop">停止</button>
+    
+    <script>
+        function MySecondTimeOut(startTime) {
+
+            this.startTime = startTime;
+            this.differenceTime = 0;
+            this.pauseTime = 0;
+
+            /**
+             * 开始计时
+             * @returns {*}
+             */
+            this.startFun = function () {
+                let nowTime = new Date().getTime(); //当前的时间戳
+                this.differenceTime = nowTime - this.startTime + this.pauseTime; //时间差 毫秒
+                return this.formateTime(this.differenceTime);
+            }
+
+            /**
+             * 格式化 倒计时 字符串
+             * @param disTime
+             * @returns {string}
+             */
+            this.formateTime = function (disTime) {
+                let minute = parseInt(disTime / 1000 / 60 % 60);
+                let second = parseInt(disTime / 1000 % 60);
+                let milsecond = parseInt(disTime % 1000); // .01
+                return this.filterZero(minute) + ':' + this.filterZero(second) + '.' + this.filterMilSecond(
+                    milsecond);
+            }
+
+            /**
+             * 字符串补零
+             * @param num
+             * @returns {string}
+             */
+            this.filterZero = function (num) {
+                return num >= 10 ? num : '0' + num;
+            }
+
+            /**
+             * 毫秒补零
+             * @param mil
+             * @returns {string}
+             */
+            this.filterMilSecond = function (mil) {
+                mil = String(mil);
+                if (mil.length == 1) {
+                    return mil + '0';
+                } else {
+                    return mil.substr(0, 2);
+                }
+            }
+
+
+        }
+
+
+        let MyTimes = new MySecondTimeOut(0);
+
+        function start() {
+
+            if (MyTimes.startTime == 0) {
+                MyTimes.startTime = new Date().getTime();
+            }
+            console.log(MyTimes.startTime);
+
+            document.getElementById('strTimes').innerHTML = MyTimes.startFun();
+            t = setTimeout(start, 100);
+        }
+
+        function stop() {
+            clearTimeout(t);
+            MyTimes.startTime = 0;
+            MyTimes.pauseTime = 0;
+        }
+
+        function pause() {
+            clearTimeout(t);
+            MyTimes.pauseTime = MyTimes.differenceTime;
+            MyTimes.startTime = 0;
+        }
+
+        document.getElementById('start').onclick = start;
+        document.getElementById('stop').onclick = stop;
+        document.getElementById('pause').onclick = pause;
+    </script>
+
+
+
+
+
+</body>
+
+</html>

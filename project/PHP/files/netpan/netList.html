@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网盘主界面</title>
+    <link rel="stylesheet" href="netList.css">
+    <script src="jquery.js"></script>
+    <script>
+
+        let nowPath = '/';
+
+        $(function () {
+
+            checkSession();
+            getDirContent(nowPath);
+        })
+
+
+        //验证session
+        function checkSession() {
+            $.post('checkSession.php', function () {
+                if(res.statusCode == 400) {
+                    window.location.href = 'login.html';
+                }
+            }, 'json')
+        }
+        
+        //获取当前目录下的内容
+        function getDirContent(nowPath) {
+            $.post('getDirContent.php',{
+                nowPath
+            }, function (data) {
+              if (data.statusCode == 200) {
+
+                  //遍历目录数组添加内容
+                  if(data.data.dir instanceof Array && data.data.dir.length > 0) {
+                      data.data.dir.forEach(function (item) {
+                          $('#container').append(`<div class='dir'>
+                                <ul>
+                                <li class='img'><a><img src='../../img/文件夹.png'>${item.name}</a></li>
+                                <li>${item.size}</li>
+                                <li>${item.time}</li>
+                                <li>
+                                    <a>删除</a>
+                                </li>
+                                </ul>
+                        </div>`)
+                      })
+                  }
+                  //遍历文件数组添加内容
+                  if(data.data.file instanceof Array && data.data.file.length > 0) {
+                      data.data.file.forEach(function (item) {
+                          $('#container').append(`<div class='file'>
+                                <ul>
+                                <li class='img'><a><img src='../../img/文件.png'>${item.name}</a></li>
+                                <li>${item.size}</li>
+                                <li>${item.time}</li>
+                                <li>
+                                    <a>删除</a>
+                                </li>
+                                </ul>
+                        </div>`)
+                      })
+                  }
+              }
+
+            }, 'json')
+        }
+        
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="title">
+            <ul>
+                <li>文件类型/名称</li>
+                <li>目录/文件大小</li>
+                <li>时间</li>
+                <li>删除</li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

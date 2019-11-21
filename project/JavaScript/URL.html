@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(location.href);
+
+        let href = location.href; //获取当前页面的完整路径
+        let fileName = href.substr(href.lastIndexOf('/')); //获取文件名
+        let suffixName = fileName.substr(fileName.lastIndexOf('.')); //获取后缀名
+
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth() + 1;
+        let date = now.getDate();
+        let day = now.getDay() + 1;
+        
+        
+
+    </script>
+</body>
+
+</html>

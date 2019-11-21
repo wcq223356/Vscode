@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 构造函数（类） 定义对象（属性、方法）的一种方式 -->
+    <!-- <script>
+        function My() {
+            this.name = 'mama';
+            this.age = 28;
+            this.foo = function () {
+                return 'foo';
+            }
+        }
+        // let me = My();
+        // console.log(me);
+        let me = new My ();    实例化相当于调用函数，构造的函数可以自动执行
+        console.log (me.name, me.age, me.foo());
+    </script> -->
+
+
+    <!-- 以下是以人作为例子，构造一个具体的人物形象 -->
+    <!-- <script>
+            function My(name, age, sex, height, weight) {
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+                this.height = height;
+                this.weight = weight;
+                
+                this.message = function() {
+                    return 'my name is '+ this.name+' my age is '+this.age+' my height is '
+                    +this.height+' my weight is '+this.weight;
+                }
+                this.play = function(what) {
+                    return  this.name + ' playing ' + what ;
+                }
+                
+            }
+
+            let me = new My ('wangxiaoming', 22, 'man', 172, 60,)    //为上面的属性赋值
+            console.log(me.message())     
+            console.log(me.play('basketball'))      //这里的值就是function（）括号里的what
+            // document.write(me.message())
+    </script> -->
+
+            <!-- 方法的另外一种写法：this.doing = () => {} -->
+
+
+    <script>
+        function Calc(num1, num2, type) {
+
+                this.num1 = num1;
+                this.num2 = num2;
+
+                // 第一种常规方法：
+
+                // this.add = function () {
+                //     return this.num1 + this.num2;
+                // }
+                // this.sub = function () {
+                //     return this.num1 - this.num2;
+                // }
+                // this.mul = function () {
+                //     return this.num1 * this.num2;
+                // } 
+                // this.div = function () {
+                //     return this.num1 / this.num2;
+                // }
+                // this.mod = function () {
+                //     return this.num1 % this.num2;  
+                // }
+
+                // this.result = function () {
+                //     if(type == '+') {
+                //         return this.add();   //方法内部调用其他方法
+                //     } 
+                //     if(type == '-') {
+                //         return this.sub();
+                //     }
+                //     if(type == '*') {
+                //         return this.mul();
+                //     }
+                //     if(type == '/') {
+                //         return this.div();
+                //     }
+                //     if(type == '%') {
+                //         return this.mod();
+                //     }     
+                // }
+
+
+                // 第二种方法：可变函数第一种写法
+                this.add = function () {
+                    return this.num1 + this.num2;
+                }
+                this.sub = function () {
+                    return this.num1 - this.num2;
+                }
+                this.mul = function () {
+                    return this.num1 * this.num2;
+                } 
+                this.div = function () {
+                    return this.num1 / this.num2;
+                }
+                this.mod = function () {
+                    return this.num1 % this.num2; 
+                }
+                    
+                    this.result = function() {
+                    return eval('this.' + type + '()');       //方法内部调用其他方法
+
+
+
+                    // 第二种方法：可变函数第二种写法直接省略加减乘除，就下面一行代码
+                    //   return eval(num1 + type +num2);
+                }
+        }
+
+                    let count = new Calc(6, 6, 'mod')
+            
+                    console.log(count.result()) 
+                    console.log(typeof count)
+    
+    
+    </script>
+</body>
+</html>

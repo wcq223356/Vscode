@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* div{
+           border: solid 1px blue;
+           width: 100px;
+           height: 200px; 
+           
+        } */
+
+        div #box1 {
+            border: solid 1px blue;
+            width: 100px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 20px;
+            float: left;
+            text-align: center;
+        }
+
+        div #box2 {
+            border: solid 1px blue;
+            width: 100px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            float: left;
+            text-align: center;
+        }
+
+        /* div #box2 p {
+
+            padding: 4px;
+        } */
+
+        div #btn {
+            margin-top: 100px;
+            margin-left: 60px;
+            float: left;
+            padding: 50px 0;
+        }
+
+        p {
+            padding: 4px;
+        }
+
+        .p2 {
+            padding: 4px;
+            background-color: cornflowerblue;
+            color: #fff;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            padding: 10px 0;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="box1">
+            <p>文本1</p>
+            <p>文本2</p>
+            <p>文本3</p>
+            <p>文本4</p>
+            <p>文本5</p>
+            <p>文本6</p>
+            <p>文本7</p>
+        </div>
+        <div id="btn">
+            <a id="btn1">==&gt;</a><br>
+            <a id="btn2">&lt;==</a>
+        </div>
+
+        <div id="box2">
+
+        </div>
+        <button id="getCode">获取数据</button>
+        <h4 id="view"></h4>
+    </div>
+
+
+    <script>
+        let box = document.getElementById('box');
+        let box1 = document.getElementById('box1');
+        let box2 = document.getElementById('box2');
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let getCode = document.getElementById('getCode')
+
+
+
+        // document.querySelectorAll('p').forEach(function (item) {
+        //     item.onclick = function () {
+
+        //         // console.log(item.className)
+        //         if (!item.className) {
+        //             item.className = 'p2';
+        //         } else {
+        //             item.className = '';
+        //         }
+        //     }
+
+        //     // let pDom = document.createElement('p');
+        //     // let txtDOM = document.createTextNode(item.textContent);
+        //     // console.log(item.textContent)
+        //     // pDom.appendChild(txtDOM);
+        //     // document.getElementById('box2').appendChild(pDom);
+        //     // document.getElementById('box').appendChild(document.getElementById('box2'));     
+        // })
+
+        // btn1.onclick = function () {
+        //     document.querySelectorAll('p').forEach(function (item) {
+
+        //        if (item.className && item.parentNode != box2 ) {
+        //             box2.appendChild(item);
+        //             item.className = '';     
+        //        } 
+        //     })
+        // }
+
+        // btn2.onclick = function () {
+        //     document.querySelectorAll('p').forEach(function (item) {
+        //        if (item.className && item.parentNode != box1) {
+        //             box1.appendChild(item);
+        //             item.className = '';     
+        //        } 
+        //     })
+        // }
+
+        window.onload = function () {
+            document.querySelectorAll('div#box1 p').forEach(function (item, index) {
+                item.onclick = function () {
+                    item.classList.toggle('p2');        //toggle 类似于判断选择，如果有就变没有，如果没有就有
+                }
+            })
+
+            // btn1.onclick = function () {
+            //     document.querySelectorAll('div#box1 p.p2').forEach(function (item, index) {
+            //         item.classList.remove('p2');
+            //         box2.appendChild(item);
+            //     })
+            // }
+
+            // btn2.onclick = function () {
+            //     document.querySelectorAll('div#box2 p.p2').forEach(function (item, index) {
+            //         item.classList.remove('p2');
+            //         box1.appendChild(item);
+            //     })
+            // }
+
+            document.querySelectorAll('div#btn a').forEach(function (item, index) {
+                item.onclick = function() {
+                    console.log(index)
+                    let x = (index === 0) ? 'box1' :'box2',
+                        y = (index === 0) ? 'box2' : 'box1';
+
+                    document.querySelectorAll('div#'+ x +' p.p2').forEach( function (item) {
+                        item.classList.remove('p2');
+                        document.getElementById(y).appendChild(item);
+                    })
+
+                }
+            })
+
+            getCode.onclick = function () {
+                let result = '';
+                document.querySelectorAll('div#box2 p').forEach(function (item) {
+                    result += (result === '') ? item.textContent : ',' + item.textContent;
+                }) 
+                document.getElementById('view').textContent = result;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

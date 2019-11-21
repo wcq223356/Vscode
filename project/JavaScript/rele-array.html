@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关联数组</title>
+</head>
+
+<body>
+    <!-- <select name="prov" id="prov">
+        <option value="">--选择省份--</option>
+        <option value="福建">福建</option>
+        <option value="广东">广东</option>
+
+    </select>
+
+    <select name="city" id="city">
+        <option value="">--选择城市--</option>
+    </select>
+
+    <select name="county" id="county">
+        <option value="">--选择县/区--</option>
+    </select>
+
+    <script>
+        let arr = new Array();
+        arr['福建'] = ['厦门', '漳州', '泉州'];
+        arr['广东'] = ['广州', '深圳', '东莞'];
+
+        document.getElementById('prov').onchange = function () {
+
+            document.getElementById('county').options[0].selected = true;
+            document.getElementById('city').options.length = 0;
+            document.getElementById('city').add(new Option('--选择城市--', ''), null);
+
+            if (this.value == '') {
+
+                return;
+            }
+
+            arr[this.value].forEach(function (item) {
+                document.getElementById('city').add(new Option(item, item), null);
+            });
+        }
+
+
+        let arr1 = new Array();
+        arr1['厦门'] = ['思明', '湖里', '同安', '翔安'];
+        arr1['漳州'] = ['长泰', '漳浦', '诏安', '长泰'];
+        arr1['泉州'] = ['南安', '水头', '晋江', '惠安'];
+
+        arr1['广州'] = ['白云', '天河', '番禺', '黄埔'];
+        arr1['深圳'] = ['南山', '福田', '宝安', '罗湖'];
+        arr1['东莞'] = ['常平', '桥头', '石龙', '东坑'];
+
+        document.getElementById('city').onchange = function () {
+
+            document.getElementById('county').options.length = 0;
+            document.getElementById('county').add(new Option('--选择县/区--', ''), null);
+
+            if (this.value == '') {
+                return
+            }
+      
+            arr1[this.value].forEach(function (area) {
+                document.getElementById('county').add(new Option(area, area), null);
+
+            });
+
+        }
+    </script> -->
+    <!----------------------------------------------分割线 ------------------------------------>
+
+    <select name="prov" id="prov"></select>
+
+    <select name="city" id="city"></select>
+
+    <select name="county" id="county"></select>
+
+    <script>
+        //不同数组的键值如果能对应，就能形成关联
+
+        let provs = ['福建省', '广东省', '广西省'];
+
+
+        let citys = [
+            ['厦门市', '漳州市', '泉州市'],
+            ['广州市', '深圳市', '东莞市'],
+            ['柳州市', '南宁市', '桂林市'],
+
+        ];
+
+        let countys = [
+            [
+                ['思明', '湖里', '同安', '翔安'],
+                ['长泰', '漳浦', '诏安', '长泰'],
+                ['南安', '水头', '晋江', '惠安']
+            ],
+
+            [
+                ['白云', '天河', '番禺', '黄埔'],
+                ['南山', '福田', '宝安', '罗湖'],
+                ['常平', '桥头', '石龙', '东坑']
+            ],
+
+            [
+                ['城中区', '柳江区', '柳城县', '融安县'],
+                ['江南区', '兴宁区', '上林县', '横县'],
+                ['象山区', '七星区', '临川县', '阳朔县']
+            ]
+        ]
+
+        //把代码简写，直接申明变量接收
+        let provDom = document.getElementById('prov'),
+            cityDom = document.getElementById('city'),
+            countyDom = document.getElementById('county');
+
+
+        //省份下拉列表
+        restOption(provDom);
+        addOption(provs, provDom, this); 
+
+        //省份下拉改变时
+        provDom.onchange = function () {
+
+            restOption(cityDom);
+            restOption(countyDom);
+            addOption(citys[this.value], cityDom, this);
+        }
+
+        //城市下拉改变时
+        cityDom.onchange = function () {
+
+            restOption(countyDom);
+            addOption(countys[provDom.value][this.value], countyDom, this);
+        }
+
+
+        
+        //定义函数来简写代码，当需要使用相关功能时直接调用函数，赋予的参数是形参，当调用函数时
+        //直接赋予实参
+        
+        // 初始化下拉列表
+        function restOption(option) {
+
+            option.options.length = 0;
+            option.add(new Option('--请选择--', ''), null);
+        }
+
+        // 添加下拉列表的选项
+        function addOption(itemArr, itemDom, that) {
+
+            if (that.value == '') {
+                return;
+            }
+
+            itemArr.forEach(function (item, index) {
+                itemDom.add(new Option(item, index), null)
+
+            });
+        }
+        
+    </script>
+
+</body>
+
+</html>

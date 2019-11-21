@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search" value="请输入">
+
+    <!-- 焦点 -->
+    <script>
+        // 自动获取焦点
+        // document.getElementById('search').focus();
+        
+        //获取焦点后执行
+        document.getElementById('search').onfocus = function () {
+           
+            if (this.value == '请输入') {
+                this.value = '';
+            }
+            
+            
+        }
+
+        //失去焦点后执行
+        document.getElementById('search').onblur = function () {
+            
+            if (this.value == '') {
+                this.value = '请输入'
+            }
+        }
+    
+    </script>
+</body>
+</html>

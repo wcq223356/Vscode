@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    #list{
+        width: 100%;
+        height: auto;
+        border: solid 1px #e3e3e3;
+        background-color: wheat;
+        
+        
+    }
+
+    #list li{
+        list-style: none;
+        display: inline-block;
+        /* float: left; */
+    }
+
+    .pic{
+        position: relative;
+        top: 3px;
+        width: 22px;
+        height: auto;
+         
+    }
+</style>
+<body>
+
+<div id="list">
+    
+</div>
+
+<div id="counter">
+    总计：￥<span id="counterPrice"></span>
+</div>
+
+
+
+<script>
+
+    let goodsList = [
+        {goodsName: '名称A', goodsImgSrc: 'img/a.jpg', goodsPrice: 1988.00, nowCount:1},
+        {goodsName: '名称B', goodsImgSrc: 'img/b.jpg', goodsPrice: 2988.00, nowCount:2},
+        {goodsName: '名称C', goodsImgSrc: 'img/c.jpg', goodsPrice: 3988.00, nowCount:1}
+    ];
+
+    // for (let i=0; i<goodsList.length; i++) {           //遍历数组方法1
+    //     goodsList[i].goodsName
+    // }
+
+    let counter = 0;
+
+    goodsList.forEach(function (item, index) {            //遍历数组方法2
+
+        let oncePrice = item.goodsPrice * item.nowCount;      //定义一个变量来接收小计的值（商品价格*数量）
+        counter += oncePrice;
+        document.getElementById('list').innerHTML  +=  "<ul>" +                 //以下代码是用来拼接形成一个ul的列表，同时把数组goodsList
+            "<li><img src='"+item.goodsImgSrc+"'></li>" +                       //中的内容直接导入列表中
+            "<li>" +item.goodsName+ "</li> " +
+            " <li>价格：￥<span>" +item.goodsPrice+ "</span></li>" +
+            "<li><button class='test1'>-</button>" +
+            "<input type='text' value='"+item.nowCount+"' class='inputs'>" +
+            "<button class='test2'>+</button></li>" +
+            "<li >小计：￥<span class = 'oneCounter'>" +oncePrice+ "</span></li>" +
+            "<li><a href='javascript:void(0);' class='del'><img src='../img/delete.jpg' alt='删除' class= 'pic'></a></li>" +
+            "</ul>";
+    });
+
+    document.getElementById('counterPrice').textContent = counter;    
+
+
+    // 以下两段执行点击+、-号的代码如果配合删除和小计、总计等函数会出现问题，还是因为index引起的
+
+    // console.log(document.querySelectorAll('.test2'));
+    //querySelector() 只返回匹配指定选择器的第一个元素。如果要返回所有匹配元素，使用 querySelectorAll() 方法替代
+    //以下代码主要是用于当点击数量边上的‘+’或者‘-’按钮时数字会有变化                                        
+    document.querySelectorAll('.test2').forEach(function (item, index) {      //用此方法取到的元素构成了数组，因此需要遍历数组                   
+        item.onclick = function () {                                          //因为只有对象才能有onclick事件
+            let count = Number(document.querySelectorAll('.inputs')[index].value) + 1;
+            document.querySelectorAll('.inputs')[index].value = count;
+            totalOnce(index);
+        }
+    });
+
+    
+    document.querySelectorAll('.test1').forEach(function (item, index) {                      
+        item.onclick = function () {                                    
+            let count = Number(document.querySelectorAll('.inputs')[index].value) - 1;
+            if(count <=0) {
+                return 
+            }
+            document.querySelectorAll('.inputs')[index].value = count;
+            totalOnce(index);
+            } 
+        }
+    );
+    
+    //不点击‘+’、‘-’号，直接在输入框进行输入 onkeyup表示键盘事件，当按键抬起时触发
+    document.querySelectorAll('.inputs').forEach(function (item, index) {
+        item.onkeyup = function () {
+            totalOnce(index);
+        }
+    })
+
+
+// parentNode是当前该元素的父元素，这里不能用index作为索引来执行函数，不然会出现无法删除的情况
+//比如索引是index[2]，当你删除了2，3号会变成2号，但是之前已经删除了一次2号，因此无法再删除
+    document.querySelectorAll('.del').forEach(function (item, index) {
+        item.onclick = function (event) {
+            if (confirm('确认删除？')) {
+                event.target.parentNode.parentNode.parentNode.remove();
+                totalAll();
+            }
+        }
+    })
+
+    
+    //统计商品小计
+    function totalOnce (index) {
+        let onePrice = goodsList[index].goodsPrice,                        //获取商品单价
+            oneCount = document.querySelectorAll('.inputs')[index].value, //获取当前输入框中的值
+            oneCounter  = 0;
+            
+            oneCounter = onePrice * oneCount;
+        
+        document.querySelectorAll('.oneCounter')[index].textContent = oneCounter;
+        
+        totalAll ();
+    }
+   
+    //商品总计
+    function totalAll () {
+        let num = 0;
+        document.querySelectorAll('.oneCounter').forEach(function (item) {
+            console.log(item);
+            num += Number(item.textContent);
+            
+        })
+       
+        document.getElementById('counterPrice').textContent = num;
+    }
+</script>
+
+
+</body>
+</html>

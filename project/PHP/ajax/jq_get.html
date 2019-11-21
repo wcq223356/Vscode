@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'server/get.php',
+                data:{
+                    uid: 10001,
+                    uname: 'root'
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('User-Token', 'something')
+                }
+
+            })
+
+                .then(
+                    res => {
+                        console.log(res)
+                    }
+
+
+                )
+
+
+
+
+        })
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

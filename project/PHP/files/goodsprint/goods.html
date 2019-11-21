@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+
+
+            $('#file').change(function () {
+
+                let formData = new FormData(document.getElementById('form'));
+
+                $.ajax({
+                    url: 'goods.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    catch: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+
+
+            })
+
+
+
+
+
+        })
+
+
+
+    </script>
+
+</head>
+<body>
+    <form id="form">
+        <p><input type="file" name="file[]"  id="file" multiple></p>
+        <p><button type="button" id="btn">提交</button></p>
+    </form>
+</body>
+</html>

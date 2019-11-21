@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>百度下拉菜单</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.navigation {
+				width: 100%;
+				height: 30px;
+				margin: 6px 0;
+			}
+
+		.menu {
+			float: right;
+
+		}
+
+		.setting {
+			width:50px;
+			float: right;
+
+		}
+
+		#more {
+			position: relative;
+			top: -6px;
+			float: right;
+			background-color: #38f;
+			text-align: center;
+
+		}
+
+		.list {
+			position: absolute;
+			top: 35px;
+			width: 100%;			
+			display: none;
+
+		}
+
+		.morep {
+			text-decoration: none;
+			color: #ffffff;
+			text-align: center;
+			margin: 5px 5px;
+			display: block;
+			padding: 3px 10px;
+			font-size: 13px;
+			float: left;
+			color: #555;
+		}
+
+		#more:hover .list {
+			display: block;
+
+		}
+
+		#more:hover {
+			background-color: #ffffff;
+			border-bottom: solid 1px #e7e7e7;
+			border-left: solid 1px #e7e7e7;
+			color: black;
+			font-weight: bold;
+		}
+
+		.morepp-list {
+			font-size: 12px;
+			display: block;
+			border-bottom: solid 1px #e7e7e7;
+			border-left: solid 1px #e7e7e7;
+			padding: 10px 0 ;
+		} 
+
+		.set {
+			display: block;
+			padding: 3px 10px;
+			font-size: 13px;
+			float: left;
+			color: #555;
+		}
+
+		.menu a {
+
+			display: block;
+			padding: 3px 10px;
+			font-size: 13px;
+			float: left;
+			color: #555;
+			font-weight: bold;
+			/*text-shadow: 10px 10px 5px  #3385FF; 文字阴影*/
+		}
+
+		.pic {
+			position: relative;
+				left: 23px;
+			display: block;
+			height: auto;
+			width: 36px;
+			
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.clear {
+			clear: both;
+			height: 0;
+			font-size: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="navigation">
+
+	<div id="more">
+		<a href="#" class="morep">更多产品</a>
+		<div class="list">
+			<a href="#" class="morepp-list"><img class="pic" src="../img/bdbri_72.png" />糯米</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/qqyy.png" />音乐</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/image_72.png" />图片</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/zhidao_72.png" />知道</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/wenku_72.png" />文库</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/bang_72.png" />风云榜</a>
+			<a href="#" class="morepp-list"><img class="pic" src="../img/tuiguang_72.png" />百度推广</a><br>
+			<a href="#" class="morepp-list">全部产品&gt;&gt;</a>
+		</div>
+	</div>
+
+	<div class="setting">
+		<a href="#" class="set">设置</a>
+	</div>
+
+	<div class="menu">
+		<a href="#" class="name">新闻</a>
+		<a href="#" class="name">好123</a>
+		<a href="#" class="name">地图</a>
+		<a href="#" class="name">视频</a>
+		<a href="#" class="name">贴吧</a>
+		<a href="#" class="name">学术</a>
+		<a href="#" class="name">登录</a>
+	</div>
+	</div>
+</body>
+
+</html>

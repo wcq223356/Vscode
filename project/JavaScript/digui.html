@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归</title>
+</head>
+
+<body>
+    <!--函数内部调用函数本身，称为递归调用-->
+    <!-- 结构：
+            function foo () {
+
+                foo ()
+            }
+            foo()       
+            值得注意的是如果在函数外部再调用函数，加上内部调用自身，这样会构成一个死循环
+
+            -->
+
+    <!-- 以下是使用死循环来执行每隔一段时间进行一次固定的操作 -->
+    <!-- <script>
+        let i = 0;
+        function foo() {
+
+            i++;
+            setTimeout(foo, 1000);  //每1S执行一次foo,1000单位是微秒
+
+            console.log(i);
+        }
+        foo();
+    </script> -->
+
+
+    <!-- 下面的例子是用递归调用的方式求1加到100 -->
+    <!-- <script>
+        let i = 0;
+        let num = 0;
+        function foo() {
+
+            if (i <= 100) {
+
+                num += i
+                i++;
+                foo();     //递归调用
+
+            }
+            return num;     //必须要返回结果，不然在外面是console不出来结果的
+        }
+        console.log(foo())
+    </script> -->
+
+    <!-- 下面这种1加到100的方法使用的是局部变量 -->
+    <!-- <script>
+        function foo (i = 0, num = 0) {
+
+            if (i < 100) {
+                i++;
+                num = i + foo (i, num);
+            }
+            return num;
+        }
+        console.log(foo())
+    
+    </script>
+     -->
+
+    <!-- 下面是求1000以内7的倍数和尾数为7的数 -->
+    <!-- <script>
+        //i++放在上面i就从2开始了，少了1
+        let i = 1;
+        function foo() {
+            if(i<1000) {
+                i++
+                if(i%7 == 0 || String(i).indexOf('7')>=0) {
+                    console.log(i)                   
+                }
+                foo();
+            }
+            
+        }
+        foo();
+              
+    </script> -->
+    <!-- 
+    <script>
+        let j = 1;
+        function foo() {
+            if (j < 1000) {
+
+                if (j % 7 == 0 || String(j).indexOf('7') >= 0) {
+                    console.log(j)
+                }
+                j++
+                foo();
+            }
+
+        }
+        foo();
+
+    </script> -->
+
+
+
+</body>
+
+</html>

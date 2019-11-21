@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>post提交表单</title>
+</head>
+<body>
+    <form action="post.php?act=login" method="post">
+        <p>
+           用户名：<input type="text" name="userName">
+        </p>
+        <p>
+            密码：<input type="password" name="userPasswd">
+        </p>
+        <p>
+            邮箱：<input type="email" name="userMail">
+        </p>
+        <p>
+            手机号：<input type="tel" name="userPhone">
+        </p>
+        <p>
+            性别：
+            <input type="radio" name="sex" value="1">男
+            <input type="radio" name="sex" value="0">女
+        </p>
+        <p>
+            爱好：
+            <input type="checkbox" name="hobby[]" value="唱">唱
+            <input type="checkbox" name="hobby[]" value="跳">跳
+            <input type="checkbox" name="hobby[]" value="rap">rap
+            <input type="checkbox" name="hobby[]" value="篮球">篮球
+        </p>
+        <p>
+            其他：
+            <textarea name="other" cols="20" rows="5"></textarea>
+        </p>
+        <p>
+            <button>注册</button>
+        </p>
+
+    </form>
+</body>
+</html>

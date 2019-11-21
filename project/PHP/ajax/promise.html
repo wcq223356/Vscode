@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise对象</title>
+    <script>
+        function foo(url, method = 'get', data = '') {
+
+            const promise = new Promise (function (resolve, reject) {
+
+                const xhr =  new XMLHttpRequest();
+                if(method == 'post') {
+                    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                }
+                xhr.open('GET', url, true);
+                xhr.send();
+
+                const handler = function () {
+                    if (this.readyState !=4) {
+                        return
+                    }
+                    if (this.status === 200) {
+                        resolve(this.response);
+                    } else {
+                        reject(this.statusText)
+                    }
+                };
+
+                xhr.onreadystatechange = handler;
+
+            })
+            return promise;
+        }
+        
+        foo ('get.php')
+            .then(
+                res => {
+                    console.log(res);
+                },
+                err => {
+                    console.log(err)
+                }
+            )
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

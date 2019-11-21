@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+
+            $('#btn').click(function () {
+                let formDate = $('#content').serialize()  //序列化表格信息，形成字符串
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'jq_form_check.php',
+                    data: formDate,
+                    dataType: 'json',
+
+                })
+                    .then(
+                        res => {
+                            if (res.stateCode == 401) {
+                                alert('信息不能为空')
+                            }
+
+                            if(res.stateCode == 402) {
+                                alert('用户名或者密码错误')
+                            }
+
+                            if (res.stateCode == 200) {
+                                alert('登录成功')
+                                location.href = 'test.php'
+                            }
+
+                        },
+                        err => {
+
+                        }
+
+                    )
+
+
+            })
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <form id="content">
+        用户名：<input type="text" name="username">
+        密码：<input type="password" name="userpwd">
+        <button type="button" id="btn">登录</button>
+    </form>
+
+</body>
+</html>
