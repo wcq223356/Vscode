@@ -77,12 +77,13 @@ class Registrant
     public function set($key, $instance)
     {
         if (is_object($instance) && is_string($key)) {
-
+            self::$_store[$key] = $instance;
+            return true;
         }
     }
-    public function isExist()
+    public function isExist($key)
     {
-
+        return array_key_exists($key, self::$_store);
     }
 
 
